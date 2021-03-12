@@ -1,10 +1,10 @@
 - 👋 Hi, I’m @7474
+  - または koudenpa
 - 👀 I’m interested in ...
+  - 気まぐれに色々。
 - 🌱 I’m currently learning ...
+  - [ASP.NET Core Blazor](https://docs.microsoft.com/aspnet/core/blazor/)
 - 💞️ I’m looking to collaborate on ...
+  - 特になし。
 - 📫 How to reach me ...
-
-<!---
-7474/7474 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+  - Twitter: https://twitter.com/koudenpa
