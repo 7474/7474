@@ -1,10 +1,8 @@
-- 👋 Hi, I’m @7474
-  - または koudenpa
-- 👀 I’m interested in ...
-  - 気まぐれに色々。
-- 🌱 I’m currently learning ...
-  - [ASP.NET Core Blazor](https://docs.microsoft.com/aspnet/core/blazor/)
-- 💞️ I’m looking to collaborate on ...
-  - 特になし。
-- 📫 How to reach me ...
-  - Twitter: https://twitter.com/koudenpa
+# @7474
+
+The name on the family register is OTA Koichi.
+Often uses the handle name koudenpa (光電).
+
+Public repositories are my hobby, mostly .NET (C#) and Microsoft Azure.
+
+Twitter: https://twitter.com/koudenpa
