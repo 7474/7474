@@ -1,5 +1,11 @@
 # @7474
 
+Webアプリケーションエンジニアを仕事にしています。
+
+趣味では2021年上期は大体 [SRC#](https://github.com/7474/SRC) 関連でC#、.NET 5、Windows Forms、Blazor WebAssemblyやCI/CDを試しています。
+
+----
+
 I only understand Japanese.
 This text is by automatic translation. 
 
