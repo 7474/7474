@@ -4,6 +4,4 @@
 
 ## lobo
 
-![](./transparent_lobo.png)
-![](./light_lobo.png)
-![](./duly_lobo.png)
+<img src="./transparent_lobo.png" width="100"> <img src="./light_lobo.png" width="100"> <img src="./duly_lobo.png" width="100">
