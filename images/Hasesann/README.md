@@ -4,14 +4,10 @@
 
 ## lobo
 
-![](./transparent_lobo.png)
-![](./light_lobo.png)
-![](./duly_lobo.png)
+<img src="./transparent_lobo.png" width="100"> <img src="./light_lobo.png" width="100"> <img src="./duly_lobo.png" width="100">
 
 ## p-lobo
 
 知的生命体で、頭部のガワは変形してむきカボチャじゃないシールドモードになる様子。
 
-![](./p_transparent_lobo.png)
-![](./p_green_lobo.png)
-![](./p_shadow_lobo.png)
+<img src="./p_transparent_lobo.png" width="100"> <img src="./p_green_lobo.png" width="100"> <img src="./p_shadow_lobo.png" width="100">
