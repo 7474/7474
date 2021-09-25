@@ -2,7 +2,9 @@
 
 Webアプリケーションエンジニアを仕事にしています。
 
-趣味では2021年上期は大体 [SRC#](https://github.com/7474/SRC) 関連でC#、.NET 5、Windows Forms、Blazor WebAssemblyやCI/CDを試しています。
+趣味では2021年上期は大体 [SRC#](https://github.com/7474/SRC) 関連でC#、.NET 5、Windows Forms、Blazor WebAssemblyやCI/CDを試していました。
+
+2021年下期はちょっと体調を崩していて趣味活動は少なめですが、引き続き同じようなことをやっていきたいと思ってます。
 
 ----
 
