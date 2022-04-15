@@ -17,3 +17,8 @@ Often uses the handle name koudenpa (光電).
 Public repositories are my hobby, mostly .NET (C#) and Microsoft Azure.
 
 Twitter: https://twitter.com/koudenpa
+
+----
+
+- [職務経歴書](職務経歴書.md)
+- [Icon](Icon.md)
