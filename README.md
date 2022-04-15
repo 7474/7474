@@ -20,6 +20,6 @@ Twitter: https://twitter.com/koudenpa
 
 ----
 
-- [職務経歴書](職務経歴書)
+- [職務経歴書](職務経歴書.md)
 - Icon
   - [images/Hasesann](images/Hasesann)
