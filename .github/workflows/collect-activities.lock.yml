@@ -20,14 +20,14 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# koudenpa のインターネット上のポジティブな活動（GitHub、はてなブログ、Zenn、Qiita）を
+# 7474 (koudenpa) のインターネット上のポジティブな活動を
 # 週次で収集し、activities.md を最新内容に更新する PR を作成する。
-# GitHub のパブリックイベント、RSSフィードを取得し、ポジティブな技術的成果・情報発信・
-# コミュニティ貢献を選別してテーブル形式で掲示する。
+# GitHub API・はてなブログ RSS・Web 検索を活用し、幅広い技術的成果・
+# 情報発信・コミュニティ貢献を選別してテーブル形式で掲示する。
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"fb7ca76d183087b05373c4f1f9bf84b098169542a07425b1dc2a9b6af9b229e9","compiler_version":"v0.64.2","strict":true,"agent_id":"copilot"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"8ae194d3e8960d7d51a289f4ab3e8103692c86a4e0dd9cbbc282ce71b5a3a5f9","compiler_version":"v0.64.2","strict":true,"agent_id":"copilot"}
 
-name: "koudenpa 活動履歴"
+name: "7474 活動履歴"
 "on":
   schedule:
   - cron: "13 12 * * 1"
@@ -45,7 +45,7 @@ permissions: {}
 concurrency:
   group: "gh-aw-${{ github.workflow }}"
 
-run-name: "koudenpa 活動履歴"
+run-name: "7474 活動履歴"
 
 jobs:
   activation:
@@ -72,7 +72,7 @@ jobs:
           GH_AW_INFO_VERSION: "latest"
           GH_AW_INFO_AGENT_VERSION: "latest"
           GH_AW_INFO_CLI_VERSION: "v0.64.2"
-          GH_AW_INFO_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_INFO_WORKFLOW_NAME: "7474 活動履歴"
           GH_AW_INFO_EXPERIMENTAL: "false"
           GH_AW_INFO_SUPPORTS_TOOLS_ALLOWLIST: "true"
           GH_AW_INFO_STAGED: "false"
@@ -129,19 +129,19 @@ jobs:
         run: |
           bash ${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh
           {
-          cat << 'GH_AW_PROMPT_3ce9bb44f4f5f385_EOF'
+          cat << 'GH_AW_PROMPT_634eed1f32f1ab1b_EOF'
           <system>
-          GH_AW_PROMPT_3ce9bb44f4f5f385_EOF
+          GH_AW_PROMPT_634eed1f32f1ab1b_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_3ce9bb44f4f5f385_EOF'
+          cat << 'GH_AW_PROMPT_634eed1f32f1ab1b_EOF'
           <safe-output-tools>
           Tools: create_pull_request, missing_tool, missing_data, noop
-          GH_AW_PROMPT_3ce9bb44f4f5f385_EOF
+          GH_AW_PROMPT_634eed1f32f1ab1b_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_create_pull_request.md"
-          cat << 'GH_AW_PROMPT_3ce9bb44f4f5f385_EOF'
+          cat << 'GH_AW_PROMPT_634eed1f32f1ab1b_EOF'
           </safe-output-tools>
           <github-context>
           The following GitHub context information is available for this workflow:
@@ -171,14 +171,14 @@ jobs:
           {{/if}}
           </github-context>
           
-          GH_AW_PROMPT_3ce9bb44f4f5f385_EOF
+          GH_AW_PROMPT_634eed1f32f1ab1b_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
-          cat << 'GH_AW_PROMPT_3ce9bb44f4f5f385_EOF'
+          cat << 'GH_AW_PROMPT_634eed1f32f1ab1b_EOF'
           </system>
-          GH_AW_PROMPT_3ce9bb44f4f5f385_EOF
-          cat << 'GH_AW_PROMPT_3ce9bb44f4f5f385_EOF'
+          GH_AW_PROMPT_634eed1f32f1ab1b_EOF
+          cat << 'GH_AW_PROMPT_634eed1f32f1ab1b_EOF'
           {{#runtime-import .github/workflows/collect-activities.md}}
-          GH_AW_PROMPT_3ce9bb44f4f5f385_EOF
+          GH_AW_PROMPT_634eed1f32f1ab1b_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
@@ -334,12 +334,12 @@ jobs:
           mkdir -p ${RUNNER_TEMP}/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_b9d4f9ff5587ace9_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_bff3ed99cfcc1208_EOF'
           {"create_pull_request":{"draft":false,"labels":["automation"],"max":1,"max_patch_size":1024,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS"],"protected_files_policy":"fallback-to-issue","protected_path_prefixes":[".github/",".agents/"],"title_prefix":"[活動履歴] "},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_b9d4f9ff5587ace9_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_bff3ed99cfcc1208_EOF
       - name: Write Safe Outputs Tools
         run: |
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/tools_meta.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_META_914abc521ecd3e2b_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/tools_meta.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_META_be2af6262e65fbaf_EOF'
           {
             "description_suffixes": {
               "create_pull_request": " CONSTRAINTS: Maximum 1 pull request(s) can be created. Title will be prefixed with \"[活動履歴] \". Labels [\"automation\"] will be automatically added."
@@ -347,8 +347,8 @@ jobs:
             "repo_params": {},
             "dynamic_tools": []
           }
-          GH_AW_SAFE_OUTPUTS_TOOLS_META_914abc521ecd3e2b_EOF
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/validation.json << 'GH_AW_SAFE_OUTPUTS_VALIDATION_0830ffb073870d01_EOF'
+          GH_AW_SAFE_OUTPUTS_TOOLS_META_be2af6262e65fbaf_EOF
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/validation.json << 'GH_AW_SAFE_OUTPUTS_VALIDATION_da965fab0c0c1169_EOF'
           {
             "create_pull_request": {
               "defaultMax": 1,
@@ -444,7 +444,7 @@ jobs:
               }
             }
           }
-          GH_AW_SAFE_OUTPUTS_VALIDATION_0830ffb073870d01_EOF
+          GH_AW_SAFE_OUTPUTS_VALIDATION_da965fab0c0c1169_EOF
           node ${RUNNER_TEMP}/gh-aw/actions/generate_safe_outputs_tools.cjs
       - name: Generate Safe Outputs MCP Server Config
         id: safe-outputs-config
@@ -512,7 +512,7 @@ jobs:
           export MCP_GATEWAY_DOCKER_COMMAND='docker run -i --rm --network host -v /var/run/docker.sock:/var/run/docker.sock -e MCP_GATEWAY_PORT -e MCP_GATEWAY_DOMAIN -e MCP_GATEWAY_API_KEY -e MCP_GATEWAY_PAYLOAD_DIR -e MCP_GATEWAY_PAYLOAD_SIZE_THRESHOLD -e DEBUG -e MCP_GATEWAY_LOG_DIR -e GH_AW_MCP_LOG_DIR -e GH_AW_SAFE_OUTPUTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH -e GH_AW_ASSETS_BRANCH -e GH_AW_ASSETS_MAX_SIZE_KB -e GH_AW_ASSETS_ALLOWED_EXTS -e DEFAULT_BRANCH -e GITHUB_MCP_SERVER_TOKEN -e GITHUB_MCP_GUARD_MIN_INTEGRITY -e GITHUB_MCP_GUARD_REPOS -e GITHUB_REPOSITORY -e GITHUB_SERVER_URL -e GITHUB_SHA -e GITHUB_WORKSPACE -e GITHUB_TOKEN -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RUN_ATTEMPT -e GITHUB_JOB -e GITHUB_ACTION -e GITHUB_EVENT_NAME -e GITHUB_EVENT_PATH -e GITHUB_ACTOR -e GITHUB_ACTOR_ID -e GITHUB_TRIGGERING_ACTOR -e GITHUB_WORKFLOW -e GITHUB_WORKFLOW_REF -e GITHUB_WORKFLOW_SHA -e GITHUB_REF -e GITHUB_REF_NAME -e GITHUB_REF_TYPE -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GH_AW_SAFE_OUTPUTS_PORT -e GH_AW_SAFE_OUTPUTS_API_KEY -v /tmp/gh-aw/mcp-payloads:/tmp/gh-aw/mcp-payloads:rw -v /opt:/opt:ro -v /tmp:/tmp:rw -v '"${GITHUB_WORKSPACE}"':'"${GITHUB_WORKSPACE}"':rw ghcr.io/github/gh-aw-mcpg:v0.2.6'
           
           mkdir -p /home/runner/.copilot
-          cat << GH_AW_MCP_CONFIG_4eef06342f22dc8c_EOF | bash ${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh
+          cat << GH_AW_MCP_CONFIG_9651eac02f00d177_EOF | bash ${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh
           {
             "mcpServers": {
               "github": {
@@ -553,7 +553,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_4eef06342f22dc8c_EOF
+          GH_AW_MCP_CONFIG_9651eac02f00d177_EOF
       - name: Download activation artifact
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
@@ -790,7 +790,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: "1"
-          GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_WORKFLOW_NAME: "7474 活動履歴"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -803,7 +803,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_WORKFLOW_NAME: "7474 活動履歴"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -817,7 +817,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_WORKFLOW_NAME: "7474 活動履歴"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_WORKFLOW_ID: "collect-activities"
@@ -842,7 +842,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_WORKFLOW_NAME: "7474 活動履歴"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_NOOP_MESSAGE: ${{ steps.noop.outputs.noop_message }}
@@ -859,7 +859,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ steps.setup-agent-output-env.outputs.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+          GH_AW_WORKFLOW_NAME: "7474 活動履歴"
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -933,8 +933,8 @@ jobs:
         if: always() && steps.detection_guard.outputs.run_detection == 'true'
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          WORKFLOW_NAME: "koudenpa 活動履歴"
-          WORKFLOW_DESCRIPTION: "koudenpa のインターネット上のポジティブな活動（GitHub、はてなブログ、Zenn、Qiita）を\n週次で収集し、activities.md を最新内容に更新する PR を作成する。\nGitHub のパブリックイベント、RSSフィードを取得し、ポジティブな技術的成果・情報発信・\nコミュニティ貢献を選別してテーブル形式で掲示する。"
+          WORKFLOW_NAME: "7474 活動履歴"
+          WORKFLOW_DESCRIPTION: "7474 (koudenpa) のインターネット上のポジティブな活動を\n週次で収集し、activities.md を最新内容に更新する PR を作成する。\nGitHub API・はてなブログ RSS・Web 検索を活用し、幅広い技術的成果・\n情報発信・コミュニティ貢献を選別してテーブル形式で掲示する。"
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
@@ -1020,7 +1020,7 @@ jobs:
       GH_AW_ENGINE_ID: "copilot"
       GH_AW_ENGINE_MODEL: ${{ needs.agent.outputs.model }}
       GH_AW_WORKFLOW_ID: "collect-activities"
-      GH_AW_WORKFLOW_NAME: "koudenpa 活動履歴"
+      GH_AW_WORKFLOW_NAME: "7474 活動履歴"
     outputs:
       code_push_failure_count: ${{ steps.process_safe_outputs.outputs.code_push_failure_count }}
       code_push_failure_errors: ${{ steps.process_safe_outputs.outputs.code_push_failure_errors }}
