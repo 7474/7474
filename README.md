@@ -19,5 +19,6 @@ Twitter: https://twitter.com/koudenpa
 ----
 
 - [職務経歴](職務経歴.md)
+- [活動履歴](activities.md)
 - Icon
   - [images/Hasesann](images/Hasesann)
