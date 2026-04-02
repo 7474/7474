@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      workflows: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: 7474/gh-aw-compile-action@ba88ab815b4c7de6e33d2bf3a77124ee37a3cb4c # v1
