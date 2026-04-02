@@ -10,8 +10,12 @@ on:
   schedule: weekly on monday
   workflow_dispatch:
 
+engine: copilot
+
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
 
 network: defaults
 
@@ -19,8 +23,15 @@ tools:
   github:
     toolsets: [default]
   web-fetch:
-  web-search:
   edit:
+
+mcp-servers:
+  tavily:
+    command: npx
+    args: ["-y", "@tavily/mcp-server"]
+    env:
+      TAVILY_API_KEY: "${{ secrets.TAVILY_API_KEY }}"
+    allowed: ["search", "search_news"]
 
 timeout-minutes: 30
 
@@ -104,7 +115,7 @@ https://api.github.com/users/7474/repos?sort=updated&per_page=100
 
 GitHub API が失敗した場合:
 1. `web-fetch` で `https://github.com/7474` のプロフィールページを取得する
-2. `web-search` で `"koudenpa" site:github.com` を検索する
+2. `tavily` (mcp-server) で `"koudenpa" site:github.com` を検索する
 
 ---
 
@@ -116,7 +127,7 @@ GitHub API が失敗した場合:
 
 - **はてなブログ RSS**: `https://koudenpa.hatenablog.com/rss`
 - **フォールバック**: `web-fetch` で `https://koudenpa.hatenablog.com/archive` を取得
-- **フォールバック 2**: `web-search` で `site:koudenpa.hatenablog.com` を検索
+- **フォールバック 2**: `tavily` (mcp-server) で `site:koudenpa.hatenablog.com` を検索
 
 ### 2-b: 記事の分類と文脈付け
 
@@ -134,7 +145,7 @@ GitHub API が失敗した場合:
 
 ## ステップ 3: Web 検索で外部活動を発見する
 
-`web-search` を使って、GitHub とブログ以外の活動を探してください。
+`tavily` (mcp-server) を使って、GitHub とブログ以外の活動を探してください。
 
 ### 検索クエリ
 
