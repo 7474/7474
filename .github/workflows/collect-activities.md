@@ -77,7 +77,7 @@ https://api.github.com/users/7474/events/public?per_page=100&page=1
 
 複数ページを取得する場合は最大 5 ページまで参照してください。
 
-> **注意**: GitHub Events API は直近 90 日分しか返しません。初回実行でそれ以前の活動も必要な場合はステップ 1-b のフォールバックを使ってください。
+> **注意**: GitHub Events API は直近 90 日分・最大 300 件程度しか返しません。初回実行でそれ以前の活動も必要な場合は **必ず** ステップ 1-b のフォールバックを併用してください。
 
 ### 1-b: フォールバック — GitHub リポジトリ・コミット履歴
 
@@ -97,7 +97,7 @@ Events API で十分な履歴が得られない場合（特に初回実行時）
 GitHub API が 404 やエラーを返した場合は、以下を試してください:
 
 1. `web-fetch` で `https://github.com/7474` のプロフィールページを取得し、リポジトリ情報を解析する
-2. `web-search` で `"7474" site:github.com` や `"koudenpa" site:github.com` を検索する
+2. `web-search` で `"koudenpa" site:github.com` を検索する（`"7474"` は汎用的な数字で偽陽性が多いため、ハンドルネーム `koudenpa` を優先して検索してください）
 
 ---
 
@@ -130,7 +130,9 @@ RSS が取得できない場合は、以下を試してください:
 - `"koudenpa" OR "7474" connpass OR doorkeeper` — 勉強会・イベント参加
 - `"koudenpa" speakerdeck OR slideshare OR slides` — スライド公開
 - `"koudenpa" npm OR nuget OR crates` — パッケージ公開
-- `"7474" site:github.com` — GitHub 上の言及
+- `"koudenpa" github` — GitHub 上の活動への言及
+
+> **注意**: `"7474"` は汎用的な数字のため単体での検索は偽陽性が多くなります。Web 検索では `"koudenpa"` をメインのキーワードとして使用してください。
 
 ### 対象となる活動の種類
 
