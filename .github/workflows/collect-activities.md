@@ -123,11 +123,16 @@ GitHub API が失敗した場合:
 
 ### 2-a: 記事の取得
 
-以下の方法で記事を取得してください:
+以下の方法を**上から順に**試し、記事一覧を取得してください:
 
-- **はてなブログ RSS**: `https://koudenpa.hatenablog.com/rss`
-- **フォールバック**: `web-fetch` で `https://koudenpa.hatenablog.com/archive` を取得
-- **フォールバック 2**: `tavily` (mcp-server) で `site:koudenpa.hatenablog.com` を検索
+1. **tavily 検索（推奨）**: `tavily` (mcp-server) で以下を検索する（ネットワーク制限に左右されず最も安定）
+   - `site:koudenpa.hatenablog.com`
+   - `koudenpa はてなブログ`
+2. **はてなブログ RSS**: `web-fetch` で `https://koudenpa.hatenablog.com/rss` を取得
+3. **はてなブログ アーカイブ**: `web-fetch` で `https://koudenpa.hatenablog.com/archive` を取得
+
+> ネットワークエラー（`fetch failed` など）が発生した場合はすぐ次の手段へ移ってください。
+> 1 つ以上の手段で記事が取得できれば十分です。tavily の結果が最も豊富であれば tavily の結果を優先してください。
 
 ### 2-b: 記事の分類と文脈付け
 
@@ -145,22 +150,48 @@ GitHub API が失敗した場合:
 
 ## ステップ 3: Web 検索で外部活動を発見する
 
-`tavily` (mcp-server) を使って、GitHub とブログ以外の活動を探してください。
+`tavily` (mcp-server) の `search` および `search_news` を使って、GitHub とブログ以外の活動を**積極的に**探してください。
+以下のクエリをすべて実行し、結果を統合してください。
 
-### 検索クエリ
+### スライド・登壇
 
-- `"koudenpa" 登壇 OR 発表 OR LT` — 技術イベントでの登壇
-- `"koudenpa" OR "光電" connpass OR doorkeeper` — 勉強会・イベント参加
-- `"koudenpa" speakerdeck OR slideshare OR slides` — スライド公開
-- `"koudenpa" npm OR nuget` — パッケージ公開
-- `"koudenpa" Mackerel OR 監視` — 登壇・発表資料
+- `"koudenpa" speakerdeck` — Speaker Deck のスライド
+- `"koudenpa" slideshare` — SlideShare のスライド
+- `"koudenpa" 登壇 OR 発表 OR LT OR 講演` — 技術イベントでの登壇
+- `"koudenpa" site:speakerdeck.com` — Speaker Deck 直接検索
+
+### 勉強会・コミュニティ
+
+- `"koudenpa" connpass` — connpass でのイベント参加・登壇
+- `"koudenpa" OR "光電" doorkeeper` — Doorkeeper でのイベント参加
+- `"koudenpa" JAWS OR Azure OR dotnet OR Mackerel 勉強会` — コミュニティ別の活動
+
+### 技術記事・寄稿
+
+- `"koudenpa" site:qiita.com` — Qiita への記事投稿
+- `"koudenpa" site:zenn.dev` — Zenn への記事投稿
+- `"koudenpa" 寄稿 OR 執筆 OR インタビュー` — 外部メディアへの寄稿
+
+### パッケージ・公開物
+
+- `"koudenpa" site:npmjs.com` — npm パッケージ
+- `"koudenpa" site:nuget.org` — NuGet パッケージ
+- `"koudenpa" docker hub` — Docker Hub イメージ
+
+### その他
+
+- `"koudenpa" podcast OR YouTube OR 動画` — 動画・音声コンテンツ
+- `"7474" github marketplace` — GitHub Marketplace 公開物
+- `koudenpa 技術` (search_news) — 最近のニュース・言及
 
 ### 対象
 
 - 技術イベント・勉強会での登壇やLT
-- スライド・発表資料の公開
-- OSS パッケージの公開（npm, NuGet など）
-- 技術コミュニティでの活動
+- スライド・発表資料の公開（Speaker Deck 等）
+- 外部メディアへの寄稿・インタビュー
+- OSS パッケージの公開（npm, NuGet, Docker Hub など）
+- 技術コミュニティでの活動（connpass, Doorkeeper）
+- Qiita / Zenn などプラットフォームへの投稿
 - その他の技術的な情報発信
 
 ---
