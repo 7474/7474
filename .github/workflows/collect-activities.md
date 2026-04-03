@@ -17,7 +17,15 @@ permissions:
   issues: read
   pull-requests: read
 
-network: defaults
+network:
+  allowed:
+    - defaults
+    - "hatenablog.com"
+    - "zenn.dev"
+    - "qiita.com"
+    - "speakerdeck.com"
+    - "connpass.com"
+    - "api.tavily.com"
 
 tools:
   github:
@@ -125,14 +133,15 @@ GitHub API が失敗した場合:
 
 以下の方法を**上から順に**試し、記事一覧を取得してください:
 
-1. **tavily 検索（推奨）**: `tavily` (mcp-server) で以下を検索する（ネットワーク制限に左右されず最も安定）
+1. **tavily 検索（必ず実行）**: `tavily` (mcp-server) で以下をすべて検索する
    - `site:koudenpa.hatenablog.com`
    - `koudenpa はてなブログ`
 2. **はてなブログ RSS**: `web-fetch` で `https://koudenpa.hatenablog.com/rss` を取得
 3. **はてなブログ アーカイブ**: `web-fetch` で `https://koudenpa.hatenablog.com/archive` を取得
 
+> **重要**: tavily 検索は必ずステップ 1 として実行してください。web-fetch より先に tavily を実行することで、ネットワーク制限に関係なく記事を取得できます。
 > ネットワークエラー（`fetch failed` など）が発生した場合はすぐ次の手段へ移ってください。
-> 1 つ以上の手段で記事が取得できれば十分です。tavily の結果が最も豊富であれば tavily の結果を優先してください。
+> 複数の手段で記事が取得できた場合は、最も豊富な結果を優先してください。
 
 ### 2-b: 記事の分類と文脈付け
 
