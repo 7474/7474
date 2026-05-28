@@ -26,6 +26,7 @@ GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw
 ### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
 SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
 
+
 ---
 
 ## 🎯 主要プロジェクト
@@ -99,6 +100,17 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 - **技術スタック**: C# / .NET, Azure Functions
 - **リンク**: [リポジトリ](https://github.com/7474/JITECKakomon)
 
+### php-my-admin-lambda-web-adapter — AWS Lambda Function URL で phpMyAdmin を低コスト運用
+- **概要**: AWS App Runner のサービス終了告知を受け、phpMyAdmin の運用先を Lambda Function URL + Lambda Web Adapter へ移行するための構成。CloudFront → Lambda Function URL → コンテナ（phpMyAdmin + Lambda Web Adapter）構成で VPC 接続・低コスト・メンテナンスフリーを実現。Copilot の支援で実装し、ブログ記事として公開した。
+- **技術スタック**: PHP, Docker, AWS Lambda, Lambda Web Adapter, CloudFront, Terraform
+- **主な成果**:
+  - Lambda 読み取り専用ファイルシステム制約（Apache PID、PHP セッション、phpMyAdmin TempDir）を `/tmp` リダイレクトで解決
+  - Apache ユーザー名解決エラー（AH00543）を数値 UID/GID で回避
+  - `linux/amd64` と `linux/arm64` のマルチアーキテクチャ対応（公式イメージが amd64 のみのため別ベースイメージで対応）
+  - OCI Provenance Attestation 非互換（Lambda が非対応の形式）を `provenance: false` で解決
+  - CloudFront + `X-Origin-Verify` ヘッダによる多層アクセス制御（OAC が POST ボディハッシュを計算しないため独自実装）
+- **リンク**: [リポジトリ](https://github.com/7474/php-my-admin-lambda-web-adapter) | [ブログ記事](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)
+
 ---
 
 ## 🛠 技術スキル（リポジトリ分析に基づく）
@@ -163,6 +175,10 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 #### Webサービス設計・開発
 
 - [中小塩漬けWebサービスの今後とか、ソフトウェアのアップグレード戦略とか](https://koudenpa.hatenablog.com/entry/2024/09/08/223459)（2024-09-08）— 中小規模サービスを長期維持するためのアップグレード戦略の考察
+
+#### はてな開発者ブログ
+
+- [Amazon AuroraのCPU世代を上げるとどうなる？](https://developer.hatenastaff.com/entry/2026/02/27/180000)（2026-02-27）— 業務で実施した Aurora r6g→r8g インスタンス世代アップの性能測定結果を公開。個人ブログ記事「Aurora for MySQL r6g to r8g のパフォーマンス変化例」はこの記事を補完する事例として書かれた
 
 ---
 
