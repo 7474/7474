@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-06 12:33 JST  
-> 収集期間: 全履歴（ブログ記事追加）
+> 最終更新: 2026-04-13 21:40 JST  
+> 収集期間: 全履歴（2026-04-13 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -10,6 +10,12 @@ GitHub リポジトリの深い分析・Web 上の活動から自動構成され
 ---
 
 ## 🔥 最近の注目活動
+
+### Azure から AWS CloudFront へ — 趣味の拠点クラウド移行（2026-04）
+長年 Azure で運用していた個人サービスの拠点を AWS CloudFront ベースへ移行。phpMyAdmin の Lambda 対応・Aurora インスタンスタイプ変更と一連の取り組みとして記事化。「Azure 嫌になっちまった」と率直に心境を語りつつ、クラウドの使い分けを実践する姿勢を示した。
+
+### phpMyAdmin on Lambda Web Adapter — サーバーレス DB 管理ツールの構築（2026-04）
+phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成を設計・公開。Lambda の読み取り専用ファイルシステム制約への対応・AES-256-CBC 暗号化 Cookie セッションハンドラー実装・マルチアーキテクチャ（amd64/arm64）ビルド・CloudFront カスタムヘッダによる多層アクセス制御など、Lambda 特有の制約を徹底的に解決した。
 
 ### VPS10年物Laravelアプリを生成AI活用でAWSサーバーレスへ移行（2026-03）
 LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web アプリを、生成 AI の力を借りながら AWS サーバーレス（Laravel 12 on App Runner）へ移行。「億劫だった作業が生成 AI なら手間をかけずに実現できる」という仮説を実証した記事として、はてなブックマークで注目を集めた。
@@ -20,11 +26,6 @@ GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw
 ### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
 SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
 
-### shumilog — Cloudflare エッジスタックで趣味ログアプリを本番運用（2025-09〜2026-03）
-趣味コンテンツのログ記録アプリ `shumilog.dev` を Cloudflare Workers + D1 + R2 + React 19 + Tailwind CSS 4 のフルスタック構成で構築・運用。OpenAPI ファーストの開発フロー（仕様 → コントラクトテスト → 実装）と、フロントエンドの型定義自動生成による **API 仕様と実装の乖離を CI で防ぐ仕組み**を導入した。
-
-### php-my-admin-lambda-web-adapter — App Runner 廃止を機に phpMyAdmin を Lambda Function URL へ移行（2026-04）
-App Runner のサービス終了告知（2026年）を受け、phpMyAdmin の運用先を AWS Lambda Function URL + Lambda Web Adapter に切り替えた構成を実装・公開。Lambda の読み取り専用ファイルシステム対応（Apache PID・PHP セッション・phpMyAdmin TempDir を `/tmp` へ再配置）、Apache ユーザー名解決エラー（AH00543）の数値 UID 回避、amd64/arm64 マルチアーキテクチャビルド、OCI Provenance Attestation 非互換問題など、コンテナを Lambda で動かす際の典型的な落とし穴を体系的に解決した。
 
 ---
 
@@ -40,7 +41,19 @@ App Runner のサービス終了告知（2026年）を受け、phpMyAdmin の運
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 11
+- ⭐ 12
+
+### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
+- **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
+- **技術スタック**: PHP / Apache, AWS Lambda (Lambda Web Adapter), Amazon CloudFront, Amazon ECR, Docker (amd64/arm64 マルチアーキテクチャ), Terraform, GitHub Actions
+- **主な成果**:
+  - Lambda 読み取り専用ファイルシステムへの対応（Apache PID・Lock・PHP セッション・phpMyAdmin TempDir のパス変更）
+  - AES-256-CBC 暗号化 + HMAC-SHA256 署名による Cookie ベースのセッションハンドラーをゼロから実装（Lambda のステートレス問題を解決）
+  - `amd64` / `arm64` マルチアーキテクチャマトリクスビルドで両プラットフォーム対応
+  - CloudFront カスタムヘッダ（`X-Origin-Verify`）による多層アクセス制御（OAC が POST で使えない技術的理由を調査・代替手段を選択）
+  - OCI Provenance Attestation を無効化した Lambda 互換イメージビルド
+  - ECR Private + GHCR へのデュアルプッシュワークフロー
+- **リンク**: [リポジトリ](https://github.com/7474/php-my-admin-lambda-web-adapter) | [関連ブログ](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)
 
 ### NantoNBai — Azure Functions × PowerPoint で「N 倍グラフ」を API 化
 - **概要**: はてな技術発表で話題になった「N 倍グラフ」スタイルの画像を URL パラメータで動的生成する Azure Functions アプリ。「オフィスソフトで雑に作った感」を再現するため、PowerPoint ファイルをサーバー上で生成し画像変換するという独創的なアーキテクチャを採用した。
@@ -111,6 +124,9 @@ App Runner のサービス終了告知（2026年）を受け、phpMyAdmin の運
 | フレームワーク | Blazor WebAssembly | SRC#（SRCTestBlazor）|
 | フレームワーク | React 19 | shumilog フロントエンド |
 | フレームワーク | Hono | shumilog バックエンド（Cloudflare Workers） |
+| クラウド | AWS Lambda (Lambda Web Adapter) | php-my-admin-lambda-web-adapter（phpMyAdmin サーバーレス化） |
+| クラウド | Amazon CloudFront / ECR | php-my-admin-lambda-web-adapter（CDN・コンテナレジストリ） |
+| クラウド | AWS App Runner | VPS Laravel → サーバーレス移行（はてなブログ記事） |
 | クラウド | Azure Functions | NantoNBai、JITECKakomon |
 | クラウド | Azure CDN / Front Door | NantoNBai（キャッシュ・配信層） |
 | クラウド | Cloudflare Workers | shumilog（サーバーレス API） |
@@ -143,8 +159,9 @@ App Runner のサービス終了告知（2026年）を受け、phpMyAdmin の運
 
 #### インフラ・クラウド・運用
 
-- [phpMyAdminをAWSのLambda関数URLで動かす](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)（2026-04-06）— App Runner 廃止を機に Lambda Function URL + Lambda Web Adapter へ移行した実践記録。Lambda 特有の制約（読み取り専用 FS・UID 解決・OCI 形式）を一つずつ解決
-- [Aurora for MySQL r6g to r8g のパフォーマンス変化例](https://koudenpa.hatenablog.com/entry/2026/04/04/202642)（2026-04-04）— Aurora インスタンス世代アップ（r6g→r8g）でCPU使用率30〜40%低下・Select Latency 1.5ms→1ms などを実測で記録
+- [Azure嫌になっちまったな —— 趣味の拠点をAWS CloudFrontへ移す話](https://koudenpa.hatenablog.com/entry/2026/04/10/094719)（2026-04-10）— Azure から AWS CloudFront ベースへの個人サービス移行の経緯と心境
+- [phpMyAdminをAWSのLambda関数URLで動かす](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)（2026-04-06）— phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成の解説記事
+- [Aurora for MySQL r6g to r8g のパフォーマンス変化例](https://koudenpa.hatenablog.com/entry/2026/04/04/202642)（2026-04-04）— Aurora MySQL インスタンスタイプを r6g から r8g へ変更した際のパフォーマンス実測
 - [見せてもらおうか、RDSのBlue/Greenデプロイの性能とやらを](https://koudenpa.hatenablog.com/entry/2026/01/28/235749)（2026-01-28）— RDS Blue/Green Deployments の 5 秒未満ダウンタイムを自ら検証した実録
 - [Laravel LighthouseのGraphQLをOpenTelemetryトレース](https://koudenpa.hatenablog.com/entry/2025/03/23/203242)（2025-03-23）— Laravel + Lighthouse の GraphQL サーバーに OpenTelemetry トレースを導入した手順
 - [PHPを運用するときはOPcacheを有効にしておけ](https://koudenpa.hatenablog.com/entry/2025/02/23/225354)（2025-02-23）— OPcache 有効化の実践と設定値・運用状況の記録
@@ -179,7 +196,8 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
-| 2026-04 | php-my-admin-lambda-web-adapter 公開（App Runner 廃止を機に Lambda Function URL へ phpMyAdmin を移行） |
+| 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
+| 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
 | 2026-02 | SRC v0.5.0 リリース（.NET 8 + Copilot Coding Agent 活用） |
 | 2025-09 | shumilog 開発開始（Cloudflare エッジスタック、shumilog.dev 本番運用） |
