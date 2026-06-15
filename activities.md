@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-06-15 20:54 JST  
+> 収集期間: 全履歴（2026-06-15 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -11,20 +11,20 @@ GitHub リポジトリの深い分析・Web 上の活動から自動構成され
 
 ## 🔥 最近の注目活動
 
+### SRC に GitHub Agentic Workflows を統合 — AI エージェント駆動のメンテナンスへ（2026-06）
+SRC# リポジトリに自ら公開した `gh-aw-compile-action` を逆輸入し、`.github/workflows/agentics-maintenance.yml` を導入。Agentic Workflows のコンパイルを CI で自動実行する体制を確立した。「ツールを作り、自分のプロジェクトで食べる」という実践的な取り組みとして完結している。
+
+### SRC-Data AI インストラクション＆データガイドライン作成（2026-05）
+SRC データパック全体（ロボ 322 作品・拡張 624 作品、計 7,248 ファイル）を統計的に分析し、キャラクター格ティア定義・ステータス数値範囲・SP 構成ポリシーを `docs/データ作成ガイドライン.md` として文書化。生成 AI へのインストラクションも兼ねた設計で、Copilot が SRC データを正確に生成できるようにした。
+
 ### Azure から AWS CloudFront へ — 趣味の拠点クラウド移行（2026-04）
 長年 Azure で運用していた個人サービスの拠点を AWS CloudFront ベースへ移行。phpMyAdmin の Lambda 対応・Aurora インスタンスタイプ変更と一連の取り組みとして記事化。「Azure 嫌になっちまった」と率直に心境を語りつつ、クラウドの使い分けを実践する姿勢を示した。
 
 ### phpMyAdmin on Lambda Web Adapter — サーバーレス DB 管理ツールの構築（2026-04）
 phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成を設計・公開。Lambda の読み取り専用ファイルシステム制約への対応・AES-256-CBC 暗号化 Cookie セッションハンドラー実装・マルチアーキテクチャ（amd64/arm64）ビルド・CloudFront カスタムヘッダによる多層アクセス制御など、Lambda 特有の制約を徹底的に解決した。
 
-### VPS10年物Laravelアプリを生成AI活用でAWSサーバーレスへ移行（2026-03）
-LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web アプリを、生成 AI の力を借りながら AWS サーバーレス（Laravel 12 on App Runner）へ移行。「億劫だった作業が生成 AI なら手間をかけずに実現できる」という仮説を実証した記事として、はてなブックマークで注目を集めた。
-
 ### gh-aw-compile-action — GitHub Agentic Workflows の CI 自動化 Action（2026-04）
 GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw compile` を自動実行して `.lock.yml` を生成する GitHub Action を作成・公開。AI エージェントを活用した開発ワークフローの自動化を実現している。
-
-### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
-SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
 
 
 ---
@@ -39,9 +39,11 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - SRCDataLinter を Docker Image（`koudenpa/srcdatalinter`）と GitHub Marketplace Action（`7474/SRC-DataLinter`）として公開
   - Blazor WebAssembly でブラウザ上での SRC データ閲覧を実現
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
+  - SRC-Data リポジトリで 7,248 ファイルの統計分析に基づく AI インストラクション兼データ作成ガイドラインを整備（2026-05）
+  - GitHub Agentic Workflows を本リポジトリの CI に統合（`agentics-maintenance.yml`、2026-06）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -159,6 +161,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### インフラ・クラウド・運用
 
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 大手飲食チェーンの集中注文管理サービスが障害を起こした場合の影響を考察した分析記事
 - [Azure嫌になっちまったな —— 趣味の拠点をAWS CloudFrontへ移す話](https://koudenpa.hatenablog.com/entry/2026/04/10/094719)（2026-04-10）— Azure から AWS CloudFront ベースへの個人サービス移行の経緯と心境
 - [phpMyAdminをAWSのLambda関数URLで動かす](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)（2026-04-06）— phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成の解説記事
 - [Aurora for MySQL r6g to r8g のパフォーマンス変化例](https://koudenpa.hatenablog.com/entry/2026/04/04/202642)（2026-04-04）— Aurora MySQL インスタンスタイプを r6g から r8g へ変更した際のパフォーマンス実測
@@ -196,6 +199,8 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-06 | SRC に GitHub Agentic Workflows 統合（`agentics-maintenance.yml` 追加） |
+| 2026-05 | SRC-Data AI インストラクション兼データ作成ガイドライン作成（7,248 ファイル統計分析） |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
