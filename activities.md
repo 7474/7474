@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-06-22 20:52 JST  
+> 収集期間: 全履歴（2026-06-22 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -23,8 +23,8 @@ LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web
 ### gh-aw-compile-action — GitHub Agentic Workflows の CI 自動化 Action（2026-04）
 GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw compile` を自動実行して `.lock.yml` を生成する GitHub Action を作成・公開。AI エージェントを活用した開発ワークフローの自動化を実現している。
 
-### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
-SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
+### SRC-Data — AI 統計解析で 13,000 件超のゲームデータ作成標準を策定（2026-05）
+SRC# 向けゲームデータリポジトリ SRC-Data で、Copilot Coding Agent（Claude Sonnet 4.6）を活用し、13,000 件超のユニットデータと 9,000 件超のパイロットデータを統計解析。中央値・P10〜P90 分布を実測してデータ作成ガイドライン（GSC 準拠）を構築した。このドキュメントは人間向け仕様書と生成 AI へのインストラクションを兼ね、**AI 支援によるゲームコンテンツ制作のワークフロー**を実用化した実践例となっている。
 
 
 ---
@@ -41,7 +41,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -65,6 +65,16 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - OpenXML SDK の難解さを克服し、高レベルライブラリで解決した技術的判断
 - **リンク**: [リポジトリ](https://github.com/7474/NantoNBai) | [API Spec](https://n-bai.koudenpa.dev/api/swagger/ui)
 - ⭐ 4
+
+### agent-lab-dotnet — GitHub Copilot Agent ラボ（日本語化・Blazor/.NET 10）
+- **概要**: Microsoft dotnet-presentations が提供する GitHub Copilot Agent ハンズオンラボをベースに、日本語向けにカスタマイズしたリポジトリ。Social Bingo ゲーム「Soc Ops」（Blazor WebAssembly + .NET 10）を題材に、コンテキストエンジニアリング・カスタムエージェント構築・マルチエージェント TDD（Red → Green → Refactor）を体験できるラボ環境として整備した。
+- **技術スタック**: C# / .NET 10, Blazor WebAssembly, GitHub Copilot Agent Mode, GitHub Codespaces, GitHub Pages
+- **主な成果**:
+  - ラボガイドおよびインストラクションファイルを日本語化
+  - デザインガイド・クイズ設問を独自に追加
+  - 5 ステップのラボ（コンテキストエンジニアリング → デザインファースト → カスタムエージェント → マルチエージェント TDD）を整備
+  - GitHub Codespaces でのゼロセットアップ実行環境を提供
+- **リンク**: [リポジトリ](https://github.com/7474/agent-lab-dotnet)
 
 ### shumilog — Cloudflare エッジスタック全活用の趣味ログ Web アプリ
 - **概要**: アニメ・ゲーム・音楽など趣味コンテンツの記録・共有サービス。Cloudflare のエッジインフラ（Workers / D1 / R2）を全面採用し、サーバーレスで運用コストを抑えながら本番稼働させている。
@@ -174,6 +184,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### Webサービス設計・開発
 
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 大規模外食チェーンの注文システム障害を題材に、分散システムの境界と業務継続設計を考察
 - [中小塩漬けWebサービスの今後とか、ソフトウェアのアップグレード戦略とか](https://koudenpa.hatenablog.com/entry/2024/09/08/223459)（2024-09-08）— 中小規模サービスを長期維持するためのアップグレード戦略の考察
 
 #### はてな開発者ブログ
@@ -196,7 +207,10 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-06 | SRC: `gh aw compile` による Agentic Workflows 自動更新の継続運用 |
+| 2026-05 | SRC-Data: Copilot Coding Agent と統計解析で 13,000 件超ゲームデータのガイドライン策定 |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
+| 2026-04 | agent-lab-dotnet: GitHub Copilot Agent ラボを日本語化（Blazor/.NET 10） |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
 | 2026-02 | SRC v0.5.0 リリース（.NET 8 + Copilot Coding Agent 活用） |
