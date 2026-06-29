@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-06-29 20:35 JST  
+> 収集期間: 全履歴（2026-06-29 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -23,8 +23,11 @@ LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web
 ### gh-aw-compile-action — GitHub Agentic Workflows の CI 自動化 Action（2026-04）
 GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw compile` を自動実行して `.lock.yml` を生成する GitHub Action を作成・公開。AI エージェントを活用した開発ワークフローの自動化を実現している。
 
-### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
-SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
+### SRC-Data 統計解析 × AI 協働によるゲームデータ設計ガイドライン整備（2026-05）
+SRC ゲームデータ向けの「データ作成ガイドライン兼 AI インストラクション」を GitHub Copilot・Claude Sonnet との協働で整備。既存の 13,000 件超のユニットデータと 9,000 件超のパイロットデータを統計解析し、中央値・P10〜P90 分布に基づいてガイドラインの数値範囲を実態に最適化した。ドキュメントがそのまま AI への指示書となる「データドリブン AI インストラクション」の実践例。
+
+### 分散システム設計考察 — 外食業注文管理のダウン耐性設計（2026-05）
+中央集権型の注文管理 Web サービスがダウンした際の耐障害設計を Mermaid シーケンス図付きで考察した記事を公開。Git と GitHub の分散アーキテクチャを例えに、店舗内システムと中央 Web サービスの境界設計を論じた。「現実のシステムをエンジニア視点で解析する習慣」が滲み出る技術思考の記録。
 
 
 ---
@@ -41,7 +44,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -174,6 +177,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### Webサービス設計・開発
 
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 中央集権型 Web サービスのダウン耐性設計を Git/GitHub の分散管理の例えで考察。Mermaid シーケンス図付き
 - [中小塩漬けWebサービスの今後とか、ソフトウェアのアップグレード戦略とか](https://koudenpa.hatenablog.com/entry/2024/09/08/223459)（2024-09-08）— 中小規模サービスを長期維持するためのアップグレード戦略の考察
 
 #### はてな開発者ブログ
@@ -190,12 +194,17 @@ SRC ゲームデータのバリデーションを自動化する GitHub Marketpl
 ### Docker Hub — `koudenpa/srcdatalinter` 公開
 SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/srcdatalinter` として誰でも pull して利用可能。
 
+### GitHub Copilot Agent Mode ラボ（agent-lab-dotnet）— 日本語ローカライズ
+Microsoft/dotnet-presentations の GitHub Copilot agent mode ハンズオンラボ（Blazor + .NET 10 の Social Bingo ゲーム）をフォークして日本語化。質問リスト・UI テキスト・設計ガイド・ドキュメントを全面和訳し、VS Code Agent Mode によるマルチエージェント開発ワークフローを体験（2026-04）。
+
 ---
 
 ## 📅 過去の主要マイルストーン
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-05 | SRC-Data へ AI 協働のデータ作成ガイドライン整備（13,000件超のユニットデータを統計解析して最適化） |
+| 2026-04 | agent-lab-dotnet 日本語ローカライズ（GitHub Copilot agent mode ラボ教材の全面和訳） |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
