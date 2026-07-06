@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-07-06 20:23 JST  
+> 収集期間: 全履歴（2026-07-06 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -23,25 +23,29 @@ LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web
 ### gh-aw-compile-action — GitHub Agentic Workflows の CI 自動化 Action（2026-04）
 GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw compile` を自動実行して `.lock.yml` を生成する GitHub Action を作成・公開。AI エージェントを活用した開発ワークフローの自動化を実現している。
 
-### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
-SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
+### SRC .NET 10 対応 & DataViewer 機能拡充 & テストカバレッジ体系的補強（2026-05）
+SRC# が .NET 8 から .NET 10 へアップグレード。同時に DataViewer（SRC シナリオデータブラウザ）にテキスト検索フィルタ・ソート・表示設定モーダル・ダークモード対応を追加し、実用性を大幅向上。さらに Copilot Coding Agent を活用した**単体テストカバレッジの体系的補強**（ATalkCmd オプション・Commands 未テスト 6 件・InterMission Exchange など複数フェーズ）を実施。GitHub Pages デプロイもブランチ配布から Actions ワークフローへ移行した。
 
+### SRC-Data AI ガイドライン生成 — 7,248 ファイルの統計分析からデータ作成規約を策定（2026-05）
+SRC 向けゲームデータリポジトリ（ロボ 322 作品 / 拡張 624 作品、計 7,248 ファイル）の全データを統計分析し、データ作成ガイドライン兼 AI 向けインストラクションを自動生成。13,000 件超のユニットデータと 9,000 件超のパイロットデータからスーパー/リアル系別の数値範囲・SP 構成ポリシー・キャラクター格ティア定義を規約化した。CI バリデーションワークフローも新設。
 
 ---
 
 ## 🎯 主要プロジェクト
 
 ### SRC# — Simulation RPG Construction の C# .NET 移植
-- **概要**: 2000 年代の VB 製シミュレーション RPG エンジン「SRC」を C# / .NET へ移植するプロジェクト。GPL-3.0 ライセンスのオリジナルを継承し、.NET Standard / .NET 8 対応のコアライブラリ（SRCCore）、Windows Forms 実装（SRC#Form）、Blazor WebAssembly 実装、データ検証ツール（SRCDataLinter）など複数コンポーネントで構成される。
-- **技術スタック**: C# / .NET 8, .NET Standard 2.1, Windows Forms, Blazor WebAssembly, Docker, GitHub Actions, Terraform
+- **概要**: 2000 年代の VB 製シミュレーション RPG エンジン「SRC」を C# / .NET へ移植するプロジェクト。GPL-3.0 ライセンスのオリジナルを継承し、.NET Standard / .NET 10 対応のコアライブラリ（SRCCore）、Windows Forms 実装（SRC#Form）、Blazor WebAssembly 実装、データ検証ツール（SRCDataLinter）など複数コンポーネントで構成される。
+- **技術スタック**: C# / .NET 10, .NET Standard 2.1, Windows Forms, Blazor WebAssembly, Docker, GitHub Actions, Terraform
 - **主な成果**:
   - v0.1 〜 v0.5 まで継続リリース（2021〜2026 年）
+  - .NET 8 → .NET 10 へのアップグレード（2026-05）
+  - DataViewer にテキスト検索・ソート・表示設定・ダークモード対応を追加（2026-05）
+  - Copilot Coding Agent による単体テストカバレッジの体系的補強（複数フェーズで未テストコマンド群を網羅）
   - SRCDataLinter を Docker Image（`koudenpa/srcdatalinter`）と GitHub Marketplace Action（`7474/SRC-DataLinter`）として公開
   - Blazor WebAssembly でブラウザ上での SRC データ閲覧を実現
-  - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
-  - 3,000 コミット超の継続的な開発・リファクタリング
+  - 1,000 PR 超・3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -117,10 +121,10 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 | カテゴリ | 技術 | 実績の根拠 |
 |---------|------|-----------|
-| 言語 | C# | SRC#（3,000+コミット）、NantoNBai、JITECKakomon |
+| 言語 | C# | SRC#（1,000+ PR・3,000+コミット）、NantoNBai、JITECKakomon |
 | 言語 | TypeScript | shumilog（Cloudflare Workers + React）|
 | 言語 | JavaScript | cut-in-killer（Matter.js 物理ゲーム）、text2image |
-| フレームワーク | .NET 8 / .NET Standard 2.1 | SRC#（SRCCore）、NantoNBai |
+| フレームワーク | .NET 10 / .NET Standard 2.1 | SRC#（SRCCore）、NantoNBai |
 | フレームワーク | Blazor WebAssembly | SRC#（SRCTestBlazor）|
 | フレームワーク | React 19 | shumilog フロントエンド |
 | フレームワーク | Hono | shumilog バックエンド（Cloudflare Workers） |
@@ -159,6 +163,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### インフラ・クラウド・運用
 
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 外食業の中央集権型注文管理システムが障害時に引き起こす影響を考察した記事
 - [Azure嫌になっちまったな —— 趣味の拠点をAWS CloudFrontへ移す話](https://koudenpa.hatenablog.com/entry/2026/04/10/094719)（2026-04-10）— Azure から AWS CloudFront ベースへの個人サービス移行の経緯と心境
 - [phpMyAdminをAWSのLambda関数URLで動かす](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)（2026-04-06）— phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成の解説記事
 - [Aurora for MySQL r6g to r8g のパフォーマンス変化例](https://koudenpa.hatenablog.com/entry/2026/04/04/202642)（2026-04-04）— Aurora MySQL インスタンスタイプを r6g から r8g へ変更した際のパフォーマンス実測
@@ -196,6 +201,8 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-05 | SRC# .NET 10 対応・DataViewer 機能拡充（フィルタ/ソート/設定/ダーク対応）|
+| 2026-05 | SRC-Data 全作品データ統計分析→AI ガイドライン生成・CI バリデーション導入 |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
