@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-07-20 21:07 JST  
+> 収集期間: 全履歴（2026-07-20 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -11,17 +11,17 @@ GitHub リポジトリの深い分析・Web 上の活動から自動構成され
 
 ## 🔥 最近の注目活動
 
+### SRC-Data — 1.3万件超のゲームデータを統計解析してAIガイドライン生成（2026-05）
+SRC ゲームデータリポジトリ（SRC-Data）に、Copilot を活用して**データ作成ガイドライン**を自動生成する取り組みを実施。13,000 件超のユニットデータおよび 9,000 件超のパイロットデータを統計解析し、ガイドラインの数値範囲を実データの実態に合わせて精緻化。格分類・SP 構成・武器属性など多岐にわたる項目を体系化した。大規模データのドメイン知識抽出を AI に任せる実践例として注目。
+
+### GitHub Copilot Agent Lab の日本語化・カスタマイズ（2026-04）
+`dotnet-presentations/vscode-github-copilot-agent-lab`（Blazor + .NET 10 製の Social Bingo ゲーム）をフォークし、質問リストを日本語化・デザインガイドの追加・UI コンポーネントの改善など独自カスタマイズを実施。GitHub Copilot Agent を使った開発ワークフローを自ら体験・学習する目的で取り組んだ。
+
 ### Azure から AWS CloudFront へ — 趣味の拠点クラウド移行（2026-04）
-長年 Azure で運用していた個人サービスの拠点を AWS CloudFront ベースへ移行。phpMyAdmin の Lambda 対応・Aurora インスタンスタイプ変更と一連の取り組みとして記事化。「Azure 嫌になっちまった」と率直に心境を語りつつ、クラウドの使い分けを実践する姿勢を示した。
+Azure CDN クラシックの証明書更新停止という強制的な移行契機を受け、個人サービスの拠点を AWS CloudFront ベースへ移行。phpMyAdmin の Lambda 対応・Aurora インスタンスタイプ変更と一連の取り組みとして記事化。「Azure 嫌になっちまった」と率直に心境を語りつつ、クラウドの使い分けを実践する姿勢を示した。
 
 ### phpMyAdmin on Lambda Web Adapter — サーバーレス DB 管理ツールの構築（2026-04）
 phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成を設計・公開。Lambda の読み取り専用ファイルシステム制約への対応・AES-256-CBC 暗号化 Cookie セッションハンドラー実装・マルチアーキテクチャ（amd64/arm64）ビルド・CloudFront カスタムヘッダによる多層アクセス制御など、Lambda 特有の制約を徹底的に解決した。
-
-### VPS10年物Laravelアプリを生成AI活用でAWSサーバーレスへ移行（2026-03）
-LAMP スタック（Laravel 5）で VPS 1 台で動いていた 10 年物の Web アプリを、生成 AI の力を借りながら AWS サーバーレス（Laravel 12 on App Runner）へ移行。「億劫だった作業が生成 AI なら手間をかけずに実現できる」という仮説を実証した記事として、はてなブックマークで注目を集めた。
-
-### gh-aw-compile-action — GitHub Agentic Workflows の CI 自動化 Action（2026-04）
-GitHub Agentic Workflows の `.md` ファイルに変更があった際、`gh aw compile` を自動実行して `.lock.yml` を生成する GitHub Action を作成・公開。AI エージェントを活用した開発ワークフローの自動化を実現している。
 
 ### SRC v0.5.0 リリース — Copilot Coding Agent による移植加速（2026-02）
 SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 対応に加え、**GitHub Copilot Coding Agent を活用した移植作業の進行**が最大のトピック。大規模レガシーコードベースの C# 移植において AI 支援開発を積極的に導入したマイルストーンとなった。
@@ -41,7 +41,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -145,6 +145,10 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 ### ブログ（koudenpa.hatenablog.com）
 
+#### システム設計・考察
+
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 中央集権 Web サービス障害時の分散システム設計を、実世界の例を題材にエンジニア視点で考察
+
 #### 生成AI活用
 
 - [Webサービス開発に生成AIが入り込んできている例](https://koudenpa.hatenablog.com/entry/2026/03/29/225222)（2026-03-29）— 副業で関わる中小 Web サービスの開発現場に生成 AI が浸透してきた現状を記録
@@ -196,6 +200,7 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-05 | SRC-Data に Copilot 活用で 1.3 万件超のデータ統計解析ベースのデータ作成ガイドライン生成 |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
