@@ -1,8 +1,8 @@
 # プロジェクト & 活動ハイライト
 
 > このページは GitHub Actions ワークフローにより自動生成されます。  
-> 最終更新: 2026-04-13 21:40 JST  
-> 収集期間: 全履歴（2026-04-13 更新）
+> 最終更新: 2026-08-03 21:47 JST  
+> 収集期間: 全履歴（2026-08-03 更新）
 
 7474 (koudenpa) のプロジェクト成果・技術スキル・活動ハイライトをまとめたポートフォリオです。  
 GitHub リポジトリの深い分析・Web 上の活動から自動構成されています。
@@ -10,6 +10,12 @@ GitHub リポジトリの深い分析・Web 上の活動から自動構成され
 ---
 
 ## 🔥 最近の注目活動
+
+### 画像バトラー — 生成 AI × Cloudflare で「バーコードバトラー」の夢を実現（2026-07）
+子供の頃に遊んだバーコードバトラーへの憧れを、生成 AI と Cloudflare のエッジスタックで形にした。画像をアップロードすると Cloudflare AI が内容を分析しステータスを生成、対戦結果の実況まで AI が担う。全処理が Cloudflare Workers 上で完結するサーバーレス構成で、[ib.koudenpa.net](https://ib.koudenpa.net/) として本番公開している。
+
+### AWS DevOps Agent — アラート駆動の AI 運用調査が実用段階に（2026-07）
+AWS DevOps Agent を実業務の Mackerel アラートやコスト異常検知と連携させ、インシデント発生時に AI による調査を即時起動する運用体制を構築。CloudFront VPC オリジン障害時に発生から 10 分で要因特定が完了した体験を記録。「期待値を落とせば十分使える」という率直な評価とともに、AIOps の実用可能性を検証したレポートを公開。
 
 ### Azure から AWS CloudFront へ — 趣味の拠点クラウド移行（2026-04）
 長年 Azure で運用していた個人サービスの拠点を AWS CloudFront ベースへ移行。phpMyAdmin の Lambda 対応・Aurora インスタンスタイプ変更と一連の取り組みとして記事化。「Azure 嫌になっちまった」と率直に心境を語りつつ、クラウドの使い分けを実践する姿勢を示した。
@@ -41,7 +47,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
   - Copilot Coding Agent を活用した大規模レガシーコードの AI 支援移植（v0.5.0）
   - 3,000 コミット超の継続的な開発・リファクタリング
 - **リンク**: [リポジトリ](https://github.com/7474/SRC) | [リリース](https://github.com/7474/SRC/releases) | [ヘルプサイト](https://srch.7474.jp/)
-- ⭐ 12
+- ⭐ 13
 
 ### php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter + CloudFront でサーバーレス化
 - **概要**: PHP の DB 管理ツール phpMyAdmin を AWS Lambda Web Adapter を使って Lambda 上で動かす構成テンプレート。Lambda 特有の数多くの制約（読み取り専用ファイルシステム・ステートレスセッション・アーキテクチャ問題・OAC の POST 署名問題）を一つひとつ解決したプロダクションレディな構成。
@@ -147,6 +153,7 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### 生成AI活用
 
+- [画像バトラー〜ちょっと作りたかったものを生成AIにサッと作って貰う〜](https://koudenpa.hatenablog.com/entry/2026/07/30/223317)（2026-07-30）— バーコードバトラーへの憧れを Cloudflare AI + Workers で実現。MVP を生成 AI にサッと作ってもらった開発記録
 - [Webサービス開発に生成AIが入り込んできている例](https://koudenpa.hatenablog.com/entry/2026/03/29/225222)（2026-03-29）— 副業で関わる中小 Web サービスの開発現場に生成 AI が浸透してきた現状を記録
 - [VPS1台で動いていたLAMPなLaravel5をServerlessなLaravel12にした](https://koudenpa.hatenablog.com/entry/2026/03/24/015051)（2026-03-24）— 10 年物の VPS Laravel アプリを生成 AI 活用で AWS サーバーレス（Laravel 12）に移行した実践記録
 - [この半年の生成AIの仕事ぶりの成長に感動した](https://koudenpa.hatenablog.com/entry/2026/02/25/133045)（2026-02-25）— Copilot Coding Agent を使った SRC# 移植進行の棚卸しと、モデル世代差への感動
@@ -159,6 +166,8 @@ SRC#（Simulation RPG Construction Sharp）の v0.5.0 をリリース。.NET 8 �
 
 #### インフラ・クラウド・運用
 
+- [AWS DevOps Agent雑感](https://koudenpa.hatenablog.com/entry/2026/07/24/120000)（2026-07-24）— Mackerel アラートや AWS コスト異常と連携したアラート駆動 AI 調査の実践報告。インシデント 10 分以内要因特定の体験
+- [大手外食業の中央注文管理Webサービスがダウンしたら？](https://koudenpa.hatenablog.com/entry/2026/05/06/153121)（2026-05-06）— 中央集権システム障害時の分散システム設計を GitHub/Git の関係に例えて考察したエンジニア目線の記事
 - [Azure嫌になっちまったな —— 趣味の拠点をAWS CloudFrontへ移す話](https://koudenpa.hatenablog.com/entry/2026/04/10/094719)（2026-04-10）— Azure から AWS CloudFront ベースへの個人サービス移行の経緯と心境
 - [phpMyAdminをAWSのLambda関数URLで動かす](https://koudenpa.hatenablog.com/entry/2026/04/06/105622)（2026-04-06）— phpMyAdmin を AWS Lambda Web Adapter + CloudFront で動かす構成の解説記事
 - [Aurora for MySQL r6g to r8g のパフォーマンス変化例](https://koudenpa.hatenablog.com/entry/2026/04/04/202642)（2026-04-04）— Aurora MySQL インスタンスタイプを r6g から r8g へ変更した際のパフォーマンス実測
@@ -196,6 +205,8 @@ SRCDataLinter を Docker イメージとして Docker Hub に公開。`koudenpa/
 
 | 時期 | マイルストーン |
 |------|-------------|
+| 2026-07 | 画像バトラー（ib.koudenpa.net）公開 — Cloudflare AI × Workers でバーコードバトラーの夢を実現 |
+| 2026-07 | AWS DevOps Agent + Mackerel/コスト異常検知の連携によるアラート駆動 AI 運用体制を構築 |
 | 2026-04 | 趣味サービスの拠点を Azure から AWS CloudFront へ移行 |
 | 2026-04 | php-my-admin-lambda-web-adapter 公開（Lambda Web Adapter + Cookie セッション実装） |
 | 2026-04 | gh-aw-compile-action 公開（Agentic Workflows CI 自動化） |
