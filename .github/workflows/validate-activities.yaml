@@ -1,0 +1,61 @@
+name: validate-activities
+
+# activities.json の帰属を GitHub API で機械的に検証し、activities.md を生成する。
+# 収集エージェントは activities.json だけを書き、ここが検証と生成を担う。
+
+on:
+  pull_request:
+    paths:
+      - "activities.json"
+      - "activities.md"
+      - ".github/scripts/activities/**"
+      - ".github/workflows/validate-activities.yaml"
+  push:
+    branches: [main]
+    paths:
+      - "activities.json"
+      - ".github/scripts/activities/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # 同一リポジトリ由来の PR でのみ生成物を書き戻す(フォークからの PR は読み取り専用)
+    permissions:
+      contents: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) && 'write' || 'read' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # PR ではマージコミットではなく PR ブランチそのものを取得する(書き戻すため)
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || '' }}
+
+      # 帰属の検証が先。他者の成果物が混ざっていればここで落とし、生成に進ませない。
+      - name: Verify attribution
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/activities/verify.mjs --data activities.json
+
+      - name: Render activities.md
+        run: node .github/scripts/activities/render.mjs --data activities.json --out activities.md
+
+      - name: Commit regenerated activities.md
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          if git diff --quiet -- activities.md; then
+            echo "activities.md is already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add activities.md
+          git commit -m "activities.md を activities.json から再生成"
+          git push
+
+      # push / workflow_dispatch では書き戻さず、乖離を失敗として報告する
+      - name: Check activities.md is up to date
+        if: github.event_name != 'pull_request'
+        run: node .github/scripts/activities/render.mjs --data activities.json --out activities.md --check
