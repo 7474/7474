@@ -108,14 +108,22 @@ function makeClient(apiKey, baseUrl) {
   };
 }
 
-// Response shapes are not formally documented; accept bare arrays and the
-// common wrapper keys.
-function pickArray(data, keys) {
+// Response shapes are not formally documented, so accept a bare array as well
+// as the documented wrapper key. Throwing when no array is found matters: a
+// silently-empty list would make the sync create duplicates instead of
+// updating, and would silently drop every skill.
+function requireArray(data, keys, context) {
   if (Array.isArray(data)) return data;
   for (const key of keys) {
     if (data && Array.isArray(data[key])) return data[key];
   }
-  return [];
+  const seen = data && typeof data === "object" ? Object.keys(data).join(", ") : typeof data;
+  throw new Error(`${context}: no array found in the response (expected one of: ${keys.join(", ")}; got: ${seen})`);
+}
+
+/** Match the normalization the official client uses when resolving skill names. */
+function normalizeSkillName(name) {
+  return String(name).replace(/\s+/g, "").toLowerCase();
 }
 
 function experienceKey(organizationName, startYear, startMonth) {
@@ -186,7 +194,9 @@ export async function sync({ master, apiKey, dryRun, deleteMissing, log, summary
 
   // 2. work[] -> experiences (matched on organization name + start year-month)
   const payloads = (master.work || []).map(toExperiencePayload);
-  const existing = api ? pickArray(await api("GET", "/experiences"), ["experiences", "experience_list", "results", "items"]) : [];
+  const existing = api
+    ? requireArray(await api("GET", "/experiences"), ["experiences", "experience_list"], "GET /experiences")
+    : [];
   const existingByKey = new Map(
     existing.map((item) => [experienceKey(item.organization_name, item.start_year, item.start_month), item]),
   );
@@ -245,19 +255,18 @@ export async function sync({ master, apiKey, dryRun, deleteMissing, log, summary
       log(`[dry run] ${skills.length} skills to sync (name resolution requires an API key):`);
       for (const s of skills) log(`  - ${s.name}: ${s.x_years}y -> bucket ${toYearBucket(s.x_years)}`);
     } else {
-      const catalog = pickArray(await api("GET", "/tech_skill/master"), [
-        "tech_skill_master",
-        "tech_skills",
-        "master",
-        "results",
-        "items",
-      ]);
+      const catalog = requireArray(
+        await api("GET", "/tech_skill/master"),
+        ["tech_skill_list"],
+        "GET /tech_skill/master",
+      );
+      if (catalog.length === 0) throw new Error("GET /tech_skill/master returned an empty catalog");
       const idByName = new Map(
-        catalog.filter((m) => m?.name).map((m) => [String(m.name).toLowerCase(), m.id ?? m.tech_skill_id]),
+        catalog.filter((m) => m?.name).map((m) => [normalizeSkillName(m.name), m.id ?? m.tech_skill_id]),
       );
       const list = [];
       for (const skill of skills) {
-        const id = idByName.get(String(skill.name).toLowerCase());
+        const id = idByName.get(normalizeSkillName(skill.name));
         if (id === undefined) {
           log(`WARN skill not in the LAPRAS catalog, skipped: "${skill.name}"`);
           skipped.push(`skill ${skill.name} (not in LAPRAS catalog)`);
@@ -265,6 +274,13 @@ export async function sync({ master, apiKey, dryRun, deleteMissing, log, summary
           continue;
         }
         list.push({ tech_skill_id: id, years: toYearBucket(skill.x_years) });
+      }
+      // Every name failing to resolve means the catalog or the matching is
+      // broken, not that the master lists 20 unknown technologies.
+      if (list.length === 0) {
+        throw new Error(
+          `none of the ${skills.length} skills resolved against the LAPRAS catalog (${catalog.length} entries); the catalog format or name matching is likely broken`,
+        );
       }
       if (list.length > 0) {
         if (dryRun) log(`[dry run] would PUT tech_skill with ${list.length} skills`);
