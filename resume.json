@@ -13,34 +13,59 @@
       "region": "東京都",
       "countryCode": "JP"
     },
-    "summary": "ITのソフトウェアエンジニアです。マイコンからクラウドまでソフトウェア全般を広くフォローしています。\n\nマイコン、クライアントサーバ、Webサービスサーバ/フロント、スマホ、IaCなど、それぞれそれほど深く修めてはいませんが、引き出しが多いことが強みです。\n\n2018年から株式会社はてなで、小説投稿サイト「カクヨム」、続いてマンガビューワプラットフォーム「GigaViewer」を開発するチームのテックリードを務めています。\n\n自分は「中の上のソフトウェアエンジニア」を自認しています。特定領域を極めるタイプではないと自覚した上で、幅広い現場で得た引き出しの多さと運用の勘所を「転ばぬ先の杖」として、システムを確実に作り上げ、動かし続けることで価値を出してきました。\n\nBlogのカテゴリに履歴をまとめています。適宜参照ください。\nhttps://koudenpa.hatenablog.com/archive/category/%E5%B1%A5%E6%AD%B4\n\nやや砕けた志向は https://koudenpa.hatenablog.com/entry/2020/07/16/000057 に詳しいです（少し前の記事ですが大きくは変化していません）。",
+    "summary": "ITのソフトウェアエンジニアです。SI、IoT、Webサービスと幅広い現場で18年ほどソフトウェア開発をしてきました。2018年からは株式会社はてなで、小説投稿サイト「カクヨム」、続いてマンガビューワプラットフォーム「GigaViewer」を開発するマンガメディアチームのテックリードを務めています。\n\n自分は「中の上のソフトウェアエンジニア」を自認しています。特定領域を極めるタイプではないと自覚した上で、幅広い現場で得た引き出しの多さと運用の勘所を「転ばぬ先の杖」として、システムを確実に作り上げ、動かし続けることで価値を出してきました。「自分にしかできないことはないが、誰にでもできることなら何でもできる。自分がいればだいたいなんとかなる」が提供価値です。生成AIの普及で「具体的な実装をイメージできること」の価値はむしろ上がっていると感じており、AIと組んで楽しく開発しています。\n\nできること:\n- 大規模Webサービスのテックリード業(技術選定・移行戦略・非機能要件・チーム横断調整): 約7年\n- AWSを中心としたインフラの設計・構築・運用(ECS Fargate, Aurora, CloudFront, Terraform): 約10年\n- Webバックエンド開発(Perl, Go, PHP/Laravel, C#/.NET, Node.js): 約18年\n- 生成AIの開発プロセスへの組み込み(利用ポリシー策定、AIエージェント前提の開発フロー設計・実践)\n\nBlogのカテゴリに履歴をまとめています。適宜参照ください。\nhttps://koudenpa.hatenablog.com/archive/category/%E5%B1%A5%E6%AD%B4\n\nやや砕けた志向は https://koudenpa.hatenablog.com/entry/2020/07/16/000057 に詳しいです（少し前の記事ですが大きくは変化していません）。",
     "profiles": [
-      { "network": "GitHub", "username": "7474", "url": "https://github.com/7474" },
-      { "network": "Blog", "username": "koudenpa", "url": "https://koudenpa.hatenablog.com/" },
-      { "network": "X", "username": "koudenpa", "url": "https://twitter.com/koudenpa" },
-      { "network": "Speaker Deck", "username": "7474", "url": "https://speakerdeck.com/7474" }
+      {
+        "network": "GitHub",
+        "username": "7474",
+        "url": "https://github.com/7474"
+      },
+      {
+        "network": "Blog",
+        "username": "koudenpa",
+        "url": "https://koudenpa.hatenablog.com/"
+      },
+      {
+        "network": "X",
+        "username": "koudenpa",
+        "url": "https://twitter.com/koudenpa"
+      },
+      {
+        "network": "Speaker Deck",
+        "username": "7474",
+        "url": "https://speakerdeck.com/7474"
+      }
     ]
   },
-  "x_wantToDo": "ITエンジニアとして一生を過ごしたいです。常により良いエンジニアリングを模索し、価値のあるIT活用を創出していきたいと考えています。\n\n特にこのさきは、生成AIを前提とした開発プロセス・チームのあり方を作っていくこと、長期運用されるサービスの技術的負債解消やレガシー移行に取り組むこと、そしてマネジメント専任にはならず現場に厚く関わるエンジニアであり続けることをやっていきたいです。\n\n領域は問わないのですが、主体的に既存の課題解決や、新規の価値創出ができる環境で仕事をしていきたいです。",
+  "x_wantToDo": "ITエンジニアとして一生を過ごしたいです。常により良いエンジニアリングを模索し、価値のあるIT活用を創出していきたいと考えています。\n\n特にこのさきは:\n\n- 生成AIを前提とした開発プロセス・チームのあり方を作っていくこと\n- 長期運用されるサービスの技術的負債解消・レガシー移行を、戦略から実装まで一貫して主導すること\n- マネジメント専任にはならず、現場に厚く関わるエンジニアであり続けること\n\n領域は問わないのですが、主体的に既存の課題解決や、新規の価値創出ができる環境で仕事をしていきたいです。\n\n環境に求めることは、ソフトウェア開発が事業の中心であること、技術選定を自社内で完結できること、クラウドの上位サポート契約などソフトウェアに金を払う姿勢があること、AI活用に前向きなこと、興味を持てる事業領域であること、フルリモート可であることです。",
   "work": [
     {
       "name": "株式会社はてな",
       "url": "https://hatenacorp.jp/",
       "position": "テックリード / Webアプリケーションエンジニア",
-      "x_roles": ["web-application-engineer", "tech-lead"],
+      "x_roles": [
+        "web-application-engineer",
+        "tech-lead"
+      ],
       "startDate": "2018-11",
-      "summary": "小説投稿サイト「カクヨム」の開発・運用を担当し、2019年からテックリード。2022年にマンガビューワプラットフォーム「GigaViewer」を開発するマンガメディアチームへ異動し、同年から同チームのテックリード。",
+      "summary": "小説投稿サイト「カクヨム」の開発・運用を担当し、2019年からテックリード。2021年からノベルチーム全体のテックリード。2022年にマンガビューワプラットフォーム「GigaViewer」を開発するマンガメディアチームへ異動し、同年から同チームのテックリード。現在は2チーム・十数名規模のエンジニア組織のテックリードと、非機能領域を所掌するユニットのリードを兼務している。",
       "highlights": [
         "「カクヨム」のテックリードとして、サービス10年目を見据えた技術的負債対応と、AWSアカウント・IaaSの段階的な整理・移行を主導(Hatena Engineer Seminar #19 で発表)",
         "「少年ジャンプ＋」バックエンドのマルチテナント基盤への受け入れを、インフラ・負荷対策面でリード(Hatena Engineer Seminar #31 で発表)",
-        "新卒・中途のWebアプリケーションエンジニア採用面接を担当"
+        "GraphQL APIのPerlからGoへの段階移行プロジェクトのテックリード。移行戦略・品質保証戦略のレビューと技術選定の最終判断を担当",
+        "アプリケーションエンジニアとSREの混成ユニットを組成・運営し、健全性の指標化(SLI/SLO・四半期健診)を自ら設計・運用。リリースフロー標準化やセキュリティ強化は方針決定とトリアージを担い、実務はユニットのメンバーが担当",
+        "チームの生成AI利用ポリシーの策定・改訂と、半期ごとのAI活用計画(試行→評価→横展開)の運用",
+        "全社横断のテックリード会にチーム代表として発足時から参加",
+        "新卒・中途のWebアプリケーションエンジニア採用面接、メンバーのオンボーディング・育成施策を担当"
       ]
     },
     {
       "name": "株式会社ウフル",
       "url": "https://uhuru.co.jp/",
       "position": "ソフトウェアエンジニア",
-      "x_roles": ["web-application-engineer"],
+      "x_roles": [
+        "web-application-engineer"
+      ],
       "startDate": "2017-11",
       "endDate": "2018-10",
       "summary": "IoTコンサルティング部門の技術支援と、社内外の実証実験(PoC)システムの実装を担当。",
@@ -53,7 +78,9 @@
       "name": "DMM.com Labo",
       "url": "https://dmm-corp.com/",
       "position": "Webアプリケーションエンジニア",
-      "x_roles": ["web-application-engineer"],
+      "x_roles": [
+        "web-application-engineer"
+      ],
       "startDate": "2015-04",
       "endDate": "2017-10",
       "summary": "3Dプリントサービス「DMM.make」の保守・新規機能開発、ロボット事業のエンジニアリングを担当。最後の半年は主要サービスのオンプレミスからAWSへの移行を主導した。",
@@ -68,7 +95,9 @@
       "name": "株式会社ネッツ",
       "url": "https://www.nets-web.co.jp/",
       "position": "システムエンジニア",
-      "x_roles": ["system-engineer"],
+      "x_roles": [
+        "system-engineer"
+      ],
       "x_clientWork": true,
       "x_clientCompanyName": "複数の派遣先・請負先(非公開)",
       "startDate": "2008-04",
@@ -84,14 +113,17 @@
     {
       "name": "副業: WebサービスのPHP開発・運用",
       "position": "開発・運用全般(副業)",
-      "x_roles": ["web-application-engineer"],
+      "x_roles": [
+        "web-application-engineer"
+      ],
       "x_sideJob": true,
       "startDate": "2017-07",
       "summary": "ユーザー参加型コンテンツのWebサービス(全体5名前後、エンジニア1〜3名)で、システム開発・運用全般の最終責任を担っている(有償)。約10年、大きな問題なく省力で継続運用できていることが最大の価値。",
       "highlights": [
         "サービスインフラ構成の検討・構築、アプリケーション開発(PHP / Laravel)、CI/CDの構成",
         "Webデザイナーの起用やTwitter Cardの構成など、Webサービスの定石を適用できる体制づくり",
-        "2026年にVPS上のLAMP / Laravel 5構成を、AWSサーバレス(Lambda) + TiDB Cloud + S3 上のLaravel 12へ、生成AIエージェントを活用してフルリプレイス"
+        "2026年にVPS上のLAMP / Laravel 5構成を、AWSサーバレス(Lambda) + TiDB Cloud + S3 上のLaravel 12へ、生成AIエージェントを活用してフルリプレイス",
+        "以降はIssue起票→AIがPR作成→ディレクター確認→リリース、というAI前提の開発フローを運用"
       ]
     }
   ],
@@ -104,11 +136,77 @@
       "highlights": [
         "既存テナントと規模の異なる大型テナントを無事故で受け入れるため、負荷見積りと負荷試験を主導",
         "大型テナントの流量が既存テナントへ波及しないよう、リリース前にインフラを分割する判断を下した",
-        "予定通りリリースし安定運用へ。リリース後も実トラフィックに応じたスケール対応を継続",
+        "予定通りリリースし安定運用へ移行(リリース後のスケール対応はチームで継続)",
         "取り組みは Hatena Engineer Seminar #31 (2024-10) で公開発表。イベント自体の企画窓口も担当"
       ],
-      "keywords": ["Perl", "AWS", "ECS Fargate", "Aurora MySQL", "CloudFront", "Terraform", "Mackerel"],
+      "keywords": [
+        "Perl",
+        "AWS",
+        "ECS Fargate",
+        "Aurora MySQL",
+        "CloudFront",
+        "Terraform",
+        "Mackerel"
+      ],
       "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report"
+    },
+    {
+      "name": "GraphQL APIのPerlからGoへの段階移行",
+      "x_affiliation": "株式会社はてな",
+      "startDate": "2024-01",
+      "description": "長年Perlで開発されてきたマンガ配信基盤のGraphQL APIを、スキーマ・エンドポイント・クライアント無変更のまま、GraphQL Federationを用いてGo実装へ段階移行するプロジェクトのテックリード。設計・実装はチームメンバーが主体で、自分は全体進行と意思決定を担った。",
+      "highlights": [
+        "チームが検討・設計した移行戦略と品質保証戦略(継続的E2Eテスト・負荷試験・OpenTelemetryによる観測)の構造化レビュー",
+        "Federationルータのセルフホスト採択やGo側技術スタック(gqlgen等)といった技術選定の最終判断",
+        "社内外の合意形成・調整。キックオフ文書の初稿を生成AIに書かせて読み合わせで合意形成するなど、リードがボトルネックにならない進め方を工夫",
+        "主要メディアの本番環境への段階導入を完了し、フィールド単位の移行が進行中"
+      ],
+      "keywords": [
+        "Go",
+        "gqlgen",
+        "GraphQL Federation",
+        "OpenTelemetry",
+        "AWS",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "非機能領域専任ユニットの組成とリード",
+      "x_affiliation": "株式会社はてな",
+      "startDate": "2025-01",
+      "description": "「サービスの開発や運用を健全な状態に保つ」ことを所掌する、アプリケーションエンジニアとSREの混成ユニットを組成し、ユニットリードとして運営している。自ら手を動かす範囲とメンバーに委ねる範囲を分けて進めている。",
+      "highlights": [
+        "チームとプロダクトの健全性を関心事ごとのインジケータで定量把握する仕組みを設計し、四半期ごとの健康診断書作成とインジケータ見直し方針の策定を自ら担当",
+        "イテレーション運営、バックログのトリアージと優先順位付け、ユニット外との調整を担当",
+        "リリースフローの標準化、ランタイム更新ポリシー、依存更新の滞留解消などの運用標準について、方針を定めて推進(実務はユニットのメンバーが担当)",
+        "セキュリティ・Bot対策では対応方針の決定と事業側との調整を担当し、検証と実装はメンバーが実施",
+        "非機能課題を「気づいた人がやる」状態から、指標起点で計画的に返済するサイクルへ移行させた"
+      ],
+      "keywords": [
+        "SRE",
+        "SLI/SLO",
+        "AWS",
+        "セキュリティ",
+        "リリースフロー"
+      ]
+    },
+    {
+      "name": "チームの生成AI活用推進",
+      "x_affiliation": "株式会社はてな",
+      "startDate": "2023-01",
+      "description": "出版社の著作物を扱う、著作権的にセンシティブな事業領域での生成AI活用を、ポリシー策定から実践まで一貫して推進している。",
+      "highlights": [
+        "チームの生成AI利用ポリシーをテックリードとして執筆し継続改訂(取引先の著作物の扱い、出力の確認責任など)",
+        "半期ごとのAI活用計画を策定し、複数ユニットでの試行→ヒアリング→評価→横展開のサイクルを設計(試行の実務は各ユニットが担当)",
+        "分析SQLを生成AIに書かせるハンズオンを主催し、運用監視へのAIエージェント適用(DevOps Agent・コスト異常検知)を自ら検証",
+        "個人としても2023年からAIエージェント前提の開発を実践し、実証事例をブログで継続発信"
+      ],
+      "keywords": [
+        "生成AI",
+        "GitHub Copilot",
+        "Claude",
+        "AIエージェント"
+      ]
     },
     {
       "name": "「カクヨム」の技術的負債対応・AWSインフラ再構築",
@@ -121,7 +219,12 @@
         "中長期運用に向けた施策を軌道に載せることをミッションとし、2021年からはチーム全体のテックリードを兼務",
         "取り組みは Hatena Engineer Seminar #19 (2022-04) で「カクヨムの10年目を見据えた技術」「インフラ編 ―AWSアカウントとIaaSの段階的移行―」の2本として公開発表"
       ],
-      "keywords": ["AWS", "Terraform", "コンテナ", "技術的負債"]
+      "keywords": [
+        "AWS",
+        "Terraform",
+        "コンテナ",
+        "技術的負債"
+      ]
     },
     {
       "name": "Webサービスのオンプレミスからクラウドへの移行",
@@ -135,7 +238,12 @@
         "常時SSL対応を実施。後日の社内全サービスSSL対応時に追加作業が不要となった",
         "大量・大容量のユーザーコンテンツをファイルシステムからオブジェクトストレージへ移管し、サブシステム間インタフェースもオブジェクトストレージとメッセージでの接続に変更して対障害性を向上"
       ],
-      "keywords": ["AWS", "Terraform", "Ansible", "CircleCI"],
+      "keywords": [
+        "AWS",
+        "Terraform",
+        "Ansible",
+        "CircleCI"
+      ],
       "url": "https://www.slideshare.net/KeikoNishioka/mackerel-80523541"
     },
     {
@@ -149,31 +257,147 @@
         "Azure IoT HubやAWS IoTなどでのリアルタイム双方向コミュニケーション",
         "一部の事例はBlog記事などで発信"
       ],
-      "keywords": ["Arduino", "Raspberry Pi", "AWS IoT", "Azure IoT Hub", "Node-RED"],
+      "keywords": [
+        "Arduino",
+        "Raspberry Pi",
+        "AWS IoT",
+        "Azure IoT Hub",
+        "Node-RED"
+      ],
       "url": "https://koudenpa.hatenablog.com/archive/category/IoT"
     }
   ],
   "skills": [
-    { "name": "AWS", "level": "指導できる", "x_years": 10, "keywords": ["ECS Fargate", "Aurora", "Lambda", "CloudFront", "IoT Core"] },
-    { "name": "Mackerel", "level": "指導できる", "x_years": 9 },
-    { "name": "GitHub Actions", "level": "指導できる", "x_years": 7 },
-    { "name": "Perl", "level": "設計から一人でできる", "x_years": 7 },
-    { "name": "Go", "level": "設計から一人でできる", "x_years": 2, "keywords": ["gqlgen", "echo", "GORM"] },
-    { "name": "PHP", "level": "設計から一人でできる", "x_years": 9, "keywords": ["Laravel"] },
-    { "name": "C#", "level": "設計から一人でできる", "x_years": 10, "keywords": ["ASP.NET Core", "Blazor", "Azure Functions"] },
-    { "name": "Java", "level": "設計から一人でできる", "x_years": 7, "keywords": ["Struts", "Spring", "Seasar2"] },
-    { "name": "MySQL", "level": "設計から一人でできる", "x_years": 15 },
-    { "name": "Terraform", "level": "設計から一人でできる", "x_years": 9 },
-    { "name": "Docker", "level": "設計から一人でできる", "x_years": 9 },
-    { "name": "GraphQL", "level": "設計から一人でできる", "x_years": 4 },
-    { "name": "OpenTelemetry", "level": "設計から一人でできる", "x_years": 2 },
-    { "name": "Laravel", "level": "設計から一人でできる", "x_years": 9 },
-    { "name": "Node.js", "level": "一人で実装できる", "x_years": 9 },
-    { "name": "JavaScript", "level": "一人で実装できる", "x_years": 9 },
-    { "name": "TypeScript", "level": "一人で実装できる", "x_years": 4 },
-    { "name": "Azure", "level": "一人で実装できる", "x_years": 10, "keywords": ["Functions", "App Service", "Cosmos DB"] },
-    { "name": "Next.js", "level": "一人で実装できる", "x_years": 3 },
-    { "name": "React", "level": "一人で実装できる", "x_years": 3 }
+    {
+      "name": "AWS",
+      "level": "指導できる",
+      "x_years": 10,
+      "keywords": [
+        "ECS Fargate",
+        "Aurora",
+        "Lambda",
+        "CloudFront",
+        "IoT Core"
+      ]
+    },
+    {
+      "name": "Mackerel",
+      "level": "指導できる",
+      "x_years": 9
+    },
+    {
+      "name": "GitHub Actions",
+      "level": "指導できる",
+      "x_years": 7
+    },
+    {
+      "name": "Perl",
+      "level": "設計から一人でできる",
+      "x_years": 7
+    },
+    {
+      "name": "Go",
+      "level": "設計から一人でできる",
+      "x_years": 2,
+      "keywords": [
+        "gqlgen",
+        "echo",
+        "GORM"
+      ]
+    },
+    {
+      "name": "PHP",
+      "level": "設計から一人でできる",
+      "x_years": 9,
+      "keywords": [
+        "Laravel"
+      ]
+    },
+    {
+      "name": "C#",
+      "level": "設計から一人でできる",
+      "x_years": 10,
+      "keywords": [
+        "ASP.NET Core",
+        "Blazor",
+        "Azure Functions"
+      ]
+    },
+    {
+      "name": "Java",
+      "level": "設計から一人でできる",
+      "x_years": 7,
+      "keywords": [
+        "Struts",
+        "Spring",
+        "Seasar2"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "level": "設計から一人でできる",
+      "x_years": 15
+    },
+    {
+      "name": "Terraform",
+      "level": "設計から一人でできる",
+      "x_years": 9
+    },
+    {
+      "name": "Docker",
+      "level": "設計から一人でできる",
+      "x_years": 9
+    },
+    {
+      "name": "GraphQL",
+      "level": "設計から一人でできる",
+      "x_years": 4
+    },
+    {
+      "name": "OpenTelemetry",
+      "level": "設計から一人でできる",
+      "x_years": 2
+    },
+    {
+      "name": "Laravel",
+      "level": "設計から一人でできる",
+      "x_years": 9
+    },
+    {
+      "name": "Node.js",
+      "level": "一人で実装できる",
+      "x_years": 9
+    },
+    {
+      "name": "JavaScript",
+      "level": "一人で実装できる",
+      "x_years": 9
+    },
+    {
+      "name": "TypeScript",
+      "level": "一人で実装できる",
+      "x_years": 4
+    },
+    {
+      "name": "Azure",
+      "level": "一人で実装できる",
+      "x_years": 10,
+      "keywords": [
+        "Functions",
+        "App Service",
+        "Cosmos DB"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "level": "一人で実装できる",
+      "x_years": 3
+    },
+    {
+      "name": "React",
+      "level": "一人で実装できる",
+      "x_years": 3
+    }
   ],
   "education": [
     {
@@ -190,26 +414,60 @@
     }
   ],
   "x_talks": [
-    { "date": "2024-10", "event": "Hatena Engineer Seminar #31", "title": "マルチテナントのサービスインフラに大きなテナントを受け入れるまで", "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report" },
-    { "date": "2022-04", "event": "Hatena Engineer Seminar #19", "title": "カクヨムの10年目を見据えた技術 / インフラ編 ―AWSアカウントとIaaSの段階的移行―" },
-    { "date": "2021-09", "event": ".NETラボ 勉強会", "title": "Blazor WebAssembly × Windows Forms" },
-    { "date": "2020-08", "event": "第1回 Azure Cosmos DB 勉強会", "title": "Cosmos DB の使用感(LT)" },
-    { "date": "2018-11", "event": "Node-RED UG 勉強会", "title": "自作ノードの紹介(LT)" },
-    { "date": "2017-10", "event": "Mackerel Day", "title": "アプリケーションエンジニアがMackerelで楽しく監視構成している事例" }
+    {
+      "date": "2024-10",
+      "event": "Hatena Engineer Seminar #31",
+      "title": "マルチテナントのサービスインフラに大きなテナントを受け入れるまで",
+      "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report"
+    },
+    {
+      "date": "2022-04",
+      "event": "Hatena Engineer Seminar #19",
+      "title": "カクヨムの10年目を見据えた技術 / インフラ編 ―AWSアカウントとIaaSの段階的移行―"
+    },
+    {
+      "date": "2021-09",
+      "event": ".NETラボ 勉強会",
+      "title": "Blazor WebAssembly × Windows Forms"
+    },
+    {
+      "date": "2020-08",
+      "event": "第1回 Azure Cosmos DB 勉強会",
+      "title": "Cosmos DB の使用感(LT)"
+    },
+    {
+      "date": "2018-11",
+      "event": "Node-RED UG 勉強会",
+      "title": "自作ノードの紹介(LT)"
+    },
+    {
+      "date": "2017-10",
+      "event": "Mackerel Day",
+      "title": "アプリケーションエンジニアがMackerelで楽しく監視構成している事例"
+    }
   ],
   "x_outputs": [
-    { "category": "OSS / 公開パッケージ", "items": [
-      "NuGet: App.Metrics.Reporting.Custom.Mackerel, ShiftJISExtension",
-      "npm: node-red-contrib-mackerel, node-red-contrib-pixela",
-      "GitHub Action: mackerel-deleted-resource-status-change-action"
-    ]},
-    { "category": "個人開発", "items": [
-      "SRC — VB製フリーソフト Simulation RPG Construction の C#/.NET 移植 https://github.com/7474/SRC",
-      "shumilog — 趣味ログサービス。実装の95%以上を生成AIエージェントに任せた実験 https://shumilog.dev/"
-    ]},
-    { "category": "執筆", "items": [
-      "ブログ https://koudenpa.hatenablog.com/ (2016年〜、約340記事)",
-      "アドベントカレンダー寄稿: Mackerel、はてなエンジニア、AWS、Microsoft Azure、Blazor 等、通算20本超"
-    ]}
+    {
+      "category": "OSS / 公開パッケージ",
+      "items": [
+        "NuGet: App.Metrics.Reporting.Custom.Mackerel, ShiftJISExtension",
+        "npm: node-red-contrib-mackerel, node-red-contrib-pixela",
+        "GitHub Action: mackerel-deleted-resource-status-change-action"
+      ]
+    },
+    {
+      "category": "個人開発",
+      "items": [
+        "SRC — VB製フリーソフト Simulation RPG Construction の C#/.NET 移植 https://github.com/7474/SRC",
+        "shumilog — 趣味ログサービス。実装の95%以上を生成AIエージェントに任せた実験 https://shumilog.dev/"
+      ]
+    },
+    {
+      "category": "執筆",
+      "items": [
+        "ブログ https://koudenpa.hatenablog.com/ (2016年〜、約340記事)",
+        "アドベントカレンダー寄稿: Mackerel、はてなエンジニア、AWS、Microsoft Azure、Blazor 等、通算20本超"
+      ]
+    }
   ]
 }
