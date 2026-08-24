@@ -177,13 +177,16 @@
   ],
   "education": [
     {
-      "institution": "東京都の職業訓練校",
-      "studyType": "エレクトロニクス科(2年課程) 修了",
-      "x_note": "正式名称は要確認"
+      "institution": "東京都立多摩職業能力開発センター府中校",
+      "area": "エレクトロニクス科",
+      "studyType": "修了",
+      "startDate": "2006-04",
+      "endDate": "2008-03"
     },
     {
       "institution": "NHK学園高等学校",
-      "studyType": "通信制課程 卒業"
+      "studyType": "通信制課程 卒業",
+      "endDate": "2005-03"
     }
   ],
   "x_talks": [
