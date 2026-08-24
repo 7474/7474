@@ -35,6 +35,19 @@ node .github/actions/resume-sync/scripts/generate.mjs
 node .github/actions/resume-sync/scripts/sync.mjs --dry-run
 ```
 
+### レビュー用ビュー
+
+マスタはJSONのため差分をレビューしづらい。`--review` を付けると、**公開ページに出さない項目(学歴など)も含めたマスタの全項目**を読みやすいMarkdownにレンダリングできる。レビュー用の生成物をリポジトリに置いておけば、プルリクエストの差分を文章として読める。
+
+```bash
+node .github/actions/resume-sync/scripts/generate.mjs --review \
+  --master <マスタのJSON> --out <レビュー用Markdown>
+
+# 生成物がマスタと一致しているかの検証(--check と併用できる)
+node .github/actions/resume-sync/scripts/generate.mjs --review \
+  --master <マスタのJSON> --out <レビュー用Markdown> --check
+```
+
 `職務経歴.md` を直接編集してはいけない。プルリクエストのCIが `--check` で生成物とマスタの一致を検証し、乖離していれば失敗する。
 
 ## CIの挙動

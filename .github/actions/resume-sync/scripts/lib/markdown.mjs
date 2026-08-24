@@ -1,4 +1,6 @@
-// Render the master data as the Markdown page published on GitHub Pages.
+// Render the master data as Markdown, in two views:
+//   - renderMarkdown: the page published on GitHub Pages
+//   - renderReview:   every field in the master, for reviewing a JSON diff
 // Service-agnostic: this is the human-facing view of the same master data the
 // adapters sync to job sites.
 
@@ -7,6 +9,14 @@ import { formatPeriod, formatYearMonth, sortedByStartDesc } from "./master.mjs";
 const GENERATED_NOTICE =
   "<!-- このファイルは resume.json から生成されています。直接編集せず resume.json を編集し、" +
   "`node .github/actions/resume-sync/scripts/generate.mjs` で再生成してください。 -->";
+
+const REVIEW_NOTICE = [
+  "<!-- このファイルはマスタデータ(JSON)から生成されたレビュー用ビューです。直接編集せずマスタを編集し、",
+  "`node .github/actions/resume-sync/scripts/generate.mjs --review --master <マスタ> --out <このファイル>` で再生成してください。 -->",
+  "",
+  "> **レビュー用ビュー**: マスタデータの全項目をレンダリングしたもの(公開ページに出さない項目を含む)。",
+  "> 編集対象はマスタのJSONで、このファイルはその内容を読むためのもの。",
+].join("\n");
 
 function section(title, body) {
   return body && body.length > 0 ? `## ${title}\n\n${body}\n` : "";
@@ -80,21 +90,25 @@ function profileList(profiles) {
   return (profiles || []).map((p) => `- ${p.network}: ${p.url}`).join("\n");
 }
 
-/**
- * Build the full Markdown document from master data.
- *
- * NOTE: `education` is deliberately NOT rendered. It is kept in the master
- * because job sites ask for it as a form field, but it is not wanted on the
- * published page. Do not "fix" this by adding an education section.
- */
-export function renderMarkdown(master) {
+function educationTable(education) {
+  const rows = (education || []).map((e) => {
+    // With no start date, show the end date alone ("2005年3月") rather than an
+    // open-ended range ("〜 2005年3月").
+    const period = e.startDate ? formatPeriod(e.startDate, e.endDate) : formatYearMonth(e.endDate);
+    return `| ${period} | ${e.institution} | ${e.area || ""} | ${e.studyType || ""} |`;
+  });
+  return ["| 期間 | 学校 | 学科 | 区分 |", "|----|----|----|----|", ...rows].join("\n");
+}
+
+/** Sections common to both views. */
+function commonSections(master) {
   const work = master.work || [];
   const sideJobs = work.filter((w) => w.x_sideJob);
   const employments = sortedByStartDesc(work.filter((w) => !w.x_sideJob));
   const sideJobNote =
     sideJobs.length > 0 ? "\n\n他に、副業として下記に関わっています(「在籍企業ごとの職務内容」に記載)。" : "";
 
-  const sections = [
+  return [
     section("紹介文", master.basics.summary),
     section("このさきやってみたいこと", master.x_wantToDo),
     section("職歴", `${workTable(work)}${sideJobNote}`),
@@ -104,7 +118,30 @@ export function renderMarkdown(master) {
     section("登壇", talkList(master.x_talks)),
     section("アウトプット", outputList(master.x_outputs)),
     section("リンク", profileList(master.basics.profiles)),
-  ].filter(Boolean);
+  ];
+}
 
+/**
+ * Build the full Markdown document from master data.
+ *
+ * NOTE: `education` is deliberately NOT rendered. It is kept in the master
+ * because job sites ask for it as a form field, but it is not wanted on the
+ * published page. Do not "fix" this by adding an education section.
+ */
+export function renderMarkdown(master) {
+  const sections = commonSections(master).filter(Boolean);
   return `${[GENERATED_NOTICE, "", "# 職務経歴", "", ...sections].join("\n").trimEnd()}\n`;
+}
+
+/**
+ * Render every field of the master, for reviewing a JSON diff in readable form.
+ * Unlike renderMarkdown this includes fields kept out of the published page
+ * (currently `education`), so a reviewer sees the whole master.
+ */
+export function renderReview(master) {
+  const sections = [
+    ...commonSections(master),
+    section("学歴 ※公開ページには出さない項目", educationTable(master.education)),
+  ].filter(Boolean);
+  return `${[REVIEW_NOTICE, "", "# 職務経歴(マスタデータ全項目)", "", ...sections].join("\n").trimEnd()}\n`;
 }
