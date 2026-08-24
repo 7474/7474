@@ -80,7 +80,13 @@ function profileList(profiles) {
   return (profiles || []).map((p) => `- ${p.network}: ${p.url}`).join("\n");
 }
 
-/** Build the full Markdown document from master data. */
+/**
+ * Build the full Markdown document from master data.
+ *
+ * NOTE: `education` is deliberately NOT rendered. It is kept in the master
+ * because job sites ask for it as a form field, but it is not wanted on the
+ * published page. Do not "fix" this by adding an education section.
+ */
 export function renderMarkdown(master) {
   const work = master.work || [];
   const sideJobs = work.filter((w) => w.x_sideJob);
