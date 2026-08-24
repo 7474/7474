@@ -15,8 +15,12 @@ Gitリポジトリで管理しているMarkdownの職務経歴書を、CIから�
 |---|---|---|
 | `job_summary_heading` で指定した見出しのセクション(既定: `## 紹介文`) | 職務要約 `PUT /api/mcp/job_summary` | 10,000文字 |
 | `want_to_do_heading` で指定した見出しのセクション(既定: `## このさきやってみたいこと`) | 今後のキャリアでやりたいこと `PUT /api/mcp/want_to_do` | 1,000文字 |
+| `career_data_path` で指定したJSONの `experiences` | 職歴 `POST/PUT/DELETE /api/mcp/experiences` | 組織名+開始年月で突合し作成/更新(削除は `delete_missing_experiences: true` 時のみ) |
+| 同JSONの `tech_skills` | 経験技術 `PUT /api/mcp/tech_skill` | スキル名はLAPRASマスタ(`GET /tech_skill/master`)で実行時に名前解決。経験年数は 0/1/2/3/5/10 のバケットに丸められる |
 
 同期は**上書き**。LAPRAS側で直接編集した内容はリポジトリ側の内容で置き換えられるため、編集はリポジトリ側に一本化すること。
+
+**APIが無くCI同期できないLAPRAS項目**(手動入力が必要): 希望年収・勤務地、学歴、ポートフォリオ連携設定。
 
 ## 使い方
 
@@ -37,6 +41,8 @@ jobs:
 | name | 必須 | 既定値 | 説明 |
 |---|---|---|---|
 | `resume_path` | ✓ | — | 職務経歴書Markdownのパス |
+| `career_data_path` | | (空) | 職歴・経験技術の構造化データJSONのパス。空なら職歴・スキル同期をスキップ。フォーマットは `scripts/sync-lapras-career.mjs` 冒頭コメント参照 |
+| `delete_missing_experiences` | | `false` | `true`でJSONに無いLAPRAS上の職歴を削除(既定は警告のみ) |
 | `services` | | `lapras` | 同期先(カンマ区切り。現在は `lapras` のみ) |
 | `lapras_api_key` | ✓(lapras時) | — | [LAPRAS APIキー](https://lapras.com/config/api-key)。Secretsに保存すること |
 | `job_summary_heading` | | `紹介文` | 職務要約に同期する見出し名 |

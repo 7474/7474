@@ -12,6 +12,14 @@ inputs:
   resume_path:
     description: "Path to the resume Markdown file"
     required: true
+  career_data_path:
+    description: "Path to the structured career data JSON (experiences and tech skills). Empty to skip career sync"
+    required: false
+    default: ""
+  delete_missing_experiences:
+    description: "If true, delete LAPRAS experiences that are absent from the career data file (default: warn only)"
+    required: false
+    default: "false"
   services:
     description: "Comma-separated list of services to sync (supported: lapras)"
     required: false
@@ -46,3 +54,12 @@ runs:
         WANT_TO_DO_HEADING: ${{ inputs.want_to_do_heading }}
         DRY_RUN: ${{ inputs.dry_run }}
       run: node "$GITHUB_ACTION_PATH/scripts/sync-lapras.mjs"
+    - name: Sync career data to LAPRAS
+      if: ${{ contains(inputs.services, 'lapras') && inputs.career_data_path != '' }}
+      shell: bash
+      env:
+        CAREER_DATA_PATH: ${{ inputs.career_data_path }}
+        LAPRAS_API_KEY: ${{ inputs.lapras_api_key }}
+        DELETE_MISSING: ${{ inputs.delete_missing_experiences }}
+        DRY_RUN: ${{ inputs.dry_run }}
+      run: node "$GITHUB_ACTION_PATH/scripts/sync-lapras-career.mjs"
