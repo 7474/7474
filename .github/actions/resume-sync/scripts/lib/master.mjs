@@ -100,6 +100,20 @@ function validate(master, path) {
     }
   }
 
+  // education is part of the master (job sites ask for it) but is not rendered
+  // into the published Markdown; see lib/markdown.mjs.
+  for (const [i, e] of (master.education || []).entries()) {
+    const at = `education[${i}]`;
+    if (!e.institution) errors.push(`${at}.institution is required`);
+    for (const field of ["startDate", "endDate"]) {
+      try {
+        parseYearMonth(e[field], `${at}.${field}`);
+      } catch (err) {
+        errors.push(err.message);
+      }
+    }
+  }
+
   if (errors.length > 0) {
     throw new Error(`invalid master data (${path}):\n${errors.map((e) => `  - ${e}`).join("\n")}`);
   }

@@ -175,6 +175,17 @@
     { "name": "Next.js", "level": "一人で実装できる", "x_years": 3 },
     { "name": "React", "level": "一人で実装できる", "x_years": 3 }
   ],
+  "education": [
+    {
+      "institution": "東京都の職業訓練校",
+      "studyType": "エレクトロニクス科(2年課程) 修了",
+      "x_note": "正式名称は要確認"
+    },
+    {
+      "institution": "NHK学園高等学校",
+      "studyType": "通信制課程 卒業"
+    }
+  ],
   "x_talks": [
     { "date": "2024-10", "event": "Hatena Engineer Seminar #31", "title": "マルチテナントのサービスインフラに大きなテナントを受け入れるまで", "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report" },
     { "date": "2022-04", "event": "Hatena Engineer Seminar #19", "title": "カクヨムの10年目を見据えた技術 / インフラ編 ―AWSアカウントとIaaSの段階的移行―" },
