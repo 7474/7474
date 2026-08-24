@@ -18,7 +18,7 @@ Twitter: https://twitter.com/koudenpa
 
 ----
 
-- [職務経歴](職務経歴.md)
+- [職務経歴](職務経歴.md) ([resume.json](resume.json) — JSON Resume 形式)
 - [プロジェクト & 活動ハイライト](activities.md)
 - Icon
   - [images/Hasesann](images/Hasesann)
