@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "職務経歴.md"
+      - "lapras-career.json"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -26,5 +27,6 @@ jobs:
       - uses: ./.github/actions/resume-sync
         with:
           resume_path: 職務経歴.md
+          career_data_path: lapras-career.json
           lapras_api_key: ${{ secrets.LAPRAS_API_KEY }}
           dry_run: ${{ inputs.dry_run || 'false' }}
