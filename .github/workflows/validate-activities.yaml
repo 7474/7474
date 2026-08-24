@@ -22,6 +22,9 @@ permissions:
 
 jobs:
   validate:
+    # The initial migration may not have an activities.json yet; let the
+    # collector create it before running data validation.
+    if: ${{ hashFiles('activities.json') != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     # 同一リポジトリ由来の PR でのみ生成物を書き戻す(フォークからの PR は読み取り専用)
