@@ -1,0 +1,30 @@
+name: sync-resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "職務経歴.md"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "APIを呼ばず抽出結果のみ表示する"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      # 切り出し後は uses: 7474/resume-sync-action@v1 に差し替える
+      # (手順は .github/actions/resume-sync/README.md を参照)
+      - uses: ./.github/actions/resume-sync
+        with:
+          resume_path: 職務経歴.md
+          lapras_api_key: ${{ secrets.LAPRAS_API_KEY }}
+          dry_run: ${{ inputs.dry_run || 'false' }}

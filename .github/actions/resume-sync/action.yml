@@ -1,0 +1,48 @@
+name: "Resume Sync"
+description: >-
+  Sync sections of a Markdown resume managed in a Git repository to
+  job-site profiles from CI. Currently supports LAPRAS (job summary and
+  want-to-do fields via the LAPRAS public API).
+author: "7474"
+branding:
+  icon: upload-cloud
+  color: blue
+
+inputs:
+  resume_path:
+    description: "Path to the resume Markdown file"
+    required: true
+  services:
+    description: "Comma-separated list of services to sync (supported: lapras)"
+    required: false
+    default: "lapras"
+  lapras_api_key:
+    description: "LAPRAS API key (https://lapras.com/config/api-key). Required when services includes lapras and dry_run is false"
+    required: false
+    default: ""
+  job_summary_heading:
+    description: "Markdown heading whose section is synced to the LAPRAS 職務要約 (job summary)"
+    required: false
+    default: "紹介文"
+  want_to_do_heading:
+    description: "Markdown heading whose section is synced to the LAPRAS 今後のキャリアでやりたいこと (want to do)"
+    required: false
+    default: "このさきやってみたいこと"
+  dry_run:
+    description: "If true, print the extracted sections without calling any API"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Sync to LAPRAS
+      if: ${{ contains(inputs.services, 'lapras') }}
+      shell: bash
+      env:
+        RESUME_PATH: ${{ inputs.resume_path }}
+        LAPRAS_API_KEY: ${{ inputs.lapras_api_key }}
+        JOB_SUMMARY_HEADING: ${{ inputs.job_summary_heading }}
+        WANT_TO_DO_HEADING: ${{ inputs.want_to_do_heading }}
+        DRY_RUN: ${{ inputs.dry_run }}
+      run: node "$GITHUB_ACTION_PATH/scripts/sync-lapras.mjs"
