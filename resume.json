@@ -1,0 +1,215 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "meta": {
+    "canonical": "https://github.com/7474/7474/blob/main/resume.json",
+    "note": "職務経歴のマスタデータ(単一ソース)。JSON Resume 準拠のサービス非依存な汎用定義で、`x_` 接頭辞のフィールドのみ独自拡張。職務経歴.md はこのファイルから生成される生成物であり直接編集しないこと。各求職サイトへの同期は .github/actions/resume-sync のサービス別アダプタが固有定義へマッピングして行う。",
+    "lastModified": "2026-08-24"
+  },
+  "basics": {
+    "name": "太田 浩一",
+    "label": "テックリード / Webアプリケーションエンジニア",
+    "url": "https://koudenpa.hatenablog.com/",
+    "location": {
+      "region": "東京都",
+      "countryCode": "JP"
+    },
+    "summary": "ITのソフトウェアエンジニアです。マイコンからクラウドまでソフトウェア全般を広くフォローしています。\n\nマイコン、クライアントサーバ、Webサービスサーバ/フロント、スマホ、IaCなど、それぞれそれほど深く修めてはいませんが、引き出しが多いことが強みです。\n\n2018年から株式会社はてなで、小説投稿サイト「カクヨム」、続いてマンガビューワプラットフォーム「GigaViewer」を開発するチームのテックリードを務めています。\n\n自分は「中の上のソフトウェアエンジニア」を自認しています。特定領域を極めるタイプではないと自覚した上で、幅広い現場で得た引き出しの多さと運用の勘所を「転ばぬ先の杖」として、システムを確実に作り上げ、動かし続けることで価値を出してきました。\n\nBlogのカテゴリに履歴をまとめています。適宜参照ください。\nhttps://koudenpa.hatenablog.com/archive/category/%E5%B1%A5%E6%AD%B4\n\nやや砕けた志向は https://koudenpa.hatenablog.com/entry/2020/07/16/000057 に詳しいです（少し前の記事ですが大きくは変化していません）。",
+    "profiles": [
+      { "network": "GitHub", "username": "7474", "url": "https://github.com/7474" },
+      { "network": "Blog", "username": "koudenpa", "url": "https://koudenpa.hatenablog.com/" },
+      { "network": "X", "username": "koudenpa", "url": "https://twitter.com/koudenpa" },
+      { "network": "Speaker Deck", "username": "7474", "url": "https://speakerdeck.com/7474" }
+    ]
+  },
+  "x_wantToDo": "ITエンジニアとして一生を過ごしたいです。常により良いエンジニアリングを模索し、価値のあるIT活用を創出していきたいと考えています。\n\n特にこのさきは、生成AIを前提とした開発プロセス・チームのあり方を作っていくこと、長期運用されるサービスの技術的負債解消やレガシー移行に取り組むこと、そしてマネジメント専任にはならず現場に厚く関わるエンジニアであり続けることをやっていきたいです。\n\n領域は問わないのですが、主体的に既存の課題解決や、新規の価値創出ができる環境で仕事をしていきたいです。",
+  "work": [
+    {
+      "name": "株式会社はてな",
+      "url": "https://hatenacorp.jp/",
+      "position": "テックリード / Webアプリケーションエンジニア",
+      "x_roles": ["web-application-engineer", "tech-lead"],
+      "startDate": "2018-11",
+      "summary": "小説投稿サイト「カクヨム」の開発・運用を担当し、2019年からテックリード。2022年にマンガビューワプラットフォーム「GigaViewer」を開発するマンガメディアチームへ異動し、同年から同チームのテックリード。",
+      "highlights": [
+        "「カクヨム」のテックリードとして、サービス10年目を見据えた技術的負債対応と、AWSアカウント・IaaSの段階的な整理・移行を主導(Hatena Engineer Seminar #19 で発表)",
+        "「少年ジャンプ＋」バックエンドのマルチテナント基盤への受け入れを、インフラ・負荷対策面でリード(Hatena Engineer Seminar #31 で発表)",
+        "新卒・中途のWebアプリケーションエンジニア採用面接を担当"
+      ]
+    },
+    {
+      "name": "株式会社ウフル",
+      "url": "https://uhuru.co.jp/",
+      "position": "ソフトウェアエンジニア",
+      "x_roles": ["web-application-engineer"],
+      "startDate": "2017-11",
+      "endDate": "2018-10",
+      "summary": "IoTコンサルティング部門の技術支援と、社内外の実証実験(PoC)システムの実装を担当。",
+      "highlights": [
+        "AWS IoT Core、Kinesis Data Firehose、AWS Lambda、Node.js、Node-RED、Raspberry Pi、BLEビーコンなどを用いたPoCの実装",
+        "Mackerelを稟議から通して小規模導入"
+      ]
+    },
+    {
+      "name": "DMM.com Labo",
+      "url": "https://dmm-corp.com/",
+      "position": "Webアプリケーションエンジニア",
+      "x_roles": ["web-application-engineer"],
+      "startDate": "2015-04",
+      "endDate": "2017-10",
+      "summary": "3Dプリントサービス「DMM.make」の保守・新規機能開発、ロボット事業のエンジニアリングを担当。最後の半年は主要サービスのオンプレミスからAWSへの移行を主導した。",
+      "highlights": [
+        "DMM.make の保守・新規開発、ロボット事業のエンジニアリング(Azure IoT SDK のロボット向けビルド等。会社技術ブログに執筆)",
+        "主要サービスのオンプレミス→AWS移行を2名体制で主導",
+        "Mackerel の導入・活用事例で Mackerel Day (2017) に登壇"
+      ],
+      "x_note": "DMM.com Labo は吸収合併済み: https://dmm-corp.com/press/press-release/22971"
+    },
+    {
+      "name": "株式会社ネッツ",
+      "url": "https://www.nets-web.co.jp/",
+      "position": "システムエンジニア",
+      "x_roles": ["system-engineer"],
+      "x_clientWork": true,
+      "x_clientCompanyName": "複数の派遣先・請負先(非公開)",
+      "startDate": "2008-04",
+      "endDate": "2015-03",
+      "summary": "中小SIにて受託開発(下流〜直請け)。Java系の業務システム開発が中心。",
+      "highlights": [
+        "Struts系国産フレームワーク、Spring2、TERASOLUNA、SAStruts + S2JDBC を用いた業務システム開発",
+        "POSレジアプリケーションのプリンタI/F再実装による印刷高速化",
+        "フレームワーク拡張(アノテーションベースの権限チェック機構、設計書からの帳票自動生成)",
+        "UMLが成果物の請負案件における品質リカバリの主導"
+      ]
+    },
+    {
+      "name": "副業: WebサービスのPHP開発・運用",
+      "position": "開発・運用全般(副業)",
+      "x_roles": ["web-application-engineer"],
+      "x_sideJob": true,
+      "startDate": "2017-07",
+      "summary": "ユーザー参加型コンテンツのWebサービス(全体5名前後、エンジニア1〜3名)で、システム開発・運用全般の最終責任を担っている(有償)。約10年、大きな問題なく省力で継続運用できていることが最大の価値。",
+      "highlights": [
+        "サービスインフラ構成の検討・構築、アプリケーション開発(PHP / Laravel)、CI/CDの構成",
+        "Webデザイナーの起用やTwitter Cardの構成など、Webサービスの定石を適用できる体制づくり",
+        "2026年にVPS上のLAMP / Laravel 5構成を、AWSサーバレス(Lambda) + TiDB Cloud + S3 上のLaravel 12へ、生成AIエージェントを活用してフルリプレイス"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "「少年ジャンプ＋」バックエンドのマルチテナント基盤への受け入れ",
+      "x_affiliation": "株式会社はてな",
+      "endDate": "2024-03",
+      "description": "国内最大級のマンガアプリ「少年ジャンプ＋」のバックエンドを、複数出版社のマンガメディアが同居するマルチテナント配信基盤「GigaViewer for Apps」へ移管する大型プロジェクトで、インフラ・負荷対策領域をリードした。",
+      "highlights": [
+        "既存テナントと規模の異なる大型テナントを無事故で受け入れるため、負荷見積りと負荷試験を主導",
+        "大型テナントの流量が既存テナントへ波及しないよう、リリース前にインフラを分割する判断を下した",
+        "予定通りリリースし安定運用へ。リリース後も実トラフィックに応じたスケール対応を継続",
+        "取り組みは Hatena Engineer Seminar #31 (2024-10) で公開発表。イベント自体の企画窓口も担当"
+      ],
+      "keywords": ["Perl", "AWS", "ECS Fargate", "Aurora MySQL", "CloudFront", "Terraform", "Mackerel"],
+      "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report"
+    },
+    {
+      "name": "「カクヨム」の技術的負債対応・AWSインフラ再構築",
+      "x_affiliation": "株式会社はてな",
+      "startDate": "2019-08",
+      "endDate": "2022-03",
+      "description": "小説投稿サイト「カクヨム」のテックリードとして、サービス10年目を見据えた技術的負債対応を主導した。",
+      "highlights": [
+        "AWSアカウントとIaaSの段階的な整理・移行(コンテナ化・マネージドサービス移行)を推進し、整備作業の約1/3を自ら担当",
+        "中長期運用に向けた施策を軌道に載せることをミッションとし、2021年からはチーム全体のテックリードを兼務",
+        "取り組みは Hatena Engineer Seminar #19 (2022-04) で「カクヨムの10年目を見据えた技術」「インフラ編 ―AWSアカウントとIaaSの段階的移行―」の2本として公開発表"
+      ],
+      "keywords": ["AWS", "Terraform", "コンテナ", "技術的負債"]
+    },
+    {
+      "name": "Webサービスのオンプレミスからクラウドへの移行",
+      "x_affiliation": "DMM.com Labo",
+      "startDate": "2017-03",
+      "endDate": "2017-10",
+      "description": "オンプレミスの仮想マシンにホスティングしていた複数の中小規模Webサービスを2名体制でAWSへ移行した。必要作業の洗い出しから実現手法の検討、実施まで実作業全般を担当。",
+      "highlights": [
+        "IaC導入によりステージング・本番環境の差分を解消し、環境由来の検証不備を防止",
+        "ビルドからデプロイを自動化し、10分/回程度の手作業をリポジトリPush後の完了通知待ちに短縮。「本番を手作業する」ストレスからの解放が特に好評だった",
+        "常時SSL対応を実施。後日の社内全サービスSSL対応時に追加作業が不要となった",
+        "大量・大容量のユーザーコンテンツをファイルシステムからオブジェクトストレージへ移管し、サブシステム間インタフェースもオブジェクトストレージとメッセージでの接続に変更して対障害性を向上"
+      ],
+      "keywords": ["AWS", "Terraform", "Ansible", "CircleCI"],
+      "url": "https://www.slideshare.net/KeikoNishioka/mackerel-80523541"
+    },
+    {
+      "name": "IoTの調査検討・PoC",
+      "x_affiliation": "DMM.com Labo / 株式会社ウフル",
+      "startDate": "2016-01",
+      "endDate": "2018-10",
+      "description": "業務・プライベート両面でIoTの実現に当たっての調査検討、PoC作成を行った。ソフトウェアエンジニアの手が届く範囲は一通り抑えている。",
+      "highlights": [
+        "Arduinoでのマイコンプログラミング、Raspberry Piでのデバイスプログラミング",
+        "Azure IoT HubやAWS IoTなどでのリアルタイム双方向コミュニケーション",
+        "一部の事例はBlog記事などで発信"
+      ],
+      "keywords": ["Arduino", "Raspberry Pi", "AWS IoT", "Azure IoT Hub", "Node-RED"],
+      "url": "https://koudenpa.hatenablog.com/archive/category/IoT"
+    }
+  ],
+  "skills": [
+    { "name": "AWS", "level": "指導できる", "x_years": 10, "keywords": ["ECS Fargate", "Aurora", "Lambda", "CloudFront", "IoT Core"] },
+    { "name": "Mackerel", "level": "指導できる", "x_years": 9 },
+    { "name": "GitHub Actions", "level": "指導できる", "x_years": 7 },
+    { "name": "Perl", "level": "設計から一人でできる", "x_years": 7 },
+    { "name": "Go", "level": "設計から一人でできる", "x_years": 2, "keywords": ["gqlgen", "echo", "GORM"] },
+    { "name": "PHP", "level": "設計から一人でできる", "x_years": 9, "keywords": ["Laravel"] },
+    { "name": "C#", "level": "設計から一人でできる", "x_years": 10, "keywords": ["ASP.NET Core", "Blazor", "Azure Functions"] },
+    { "name": "Java", "level": "設計から一人でできる", "x_years": 7, "keywords": ["Struts", "Spring", "Seasar2"] },
+    { "name": "MySQL", "level": "設計から一人でできる", "x_years": 15 },
+    { "name": "Terraform", "level": "設計から一人でできる", "x_years": 9 },
+    { "name": "Docker", "level": "設計から一人でできる", "x_years": 9 },
+    { "name": "GraphQL", "level": "設計から一人でできる", "x_years": 4 },
+    { "name": "OpenTelemetry", "level": "設計から一人でできる", "x_years": 2 },
+    { "name": "Laravel", "level": "設計から一人でできる", "x_years": 9 },
+    { "name": "Node.js", "level": "一人で実装できる", "x_years": 9 },
+    { "name": "JavaScript", "level": "一人で実装できる", "x_years": 9 },
+    { "name": "TypeScript", "level": "一人で実装できる", "x_years": 4 },
+    { "name": "Azure", "level": "一人で実装できる", "x_years": 10, "keywords": ["Functions", "App Service", "Cosmos DB"] },
+    { "name": "Next.js", "level": "一人で実装できる", "x_years": 3 },
+    { "name": "React", "level": "一人で実装できる", "x_years": 3 }
+  ],
+  "education": [
+    {
+      "institution": "東京都立多摩職業能力開発センター府中校",
+      "area": "エレクトロニクス科",
+      "studyType": "修了",
+      "startDate": "2006-04",
+      "endDate": "2008-03"
+    },
+    {
+      "institution": "NHK学園高等学校",
+      "studyType": "通信制課程 卒業",
+      "endDate": "2005-03"
+    }
+  ],
+  "x_talks": [
+    { "date": "2024-10", "event": "Hatena Engineer Seminar #31", "title": "マルチテナントのサービスインフラに大きなテナントを受け入れるまで", "url": "https://developer.hatenastaff.com/entry/engineer-seminar-31-report" },
+    { "date": "2022-04", "event": "Hatena Engineer Seminar #19", "title": "カクヨムの10年目を見据えた技術 / インフラ編 ―AWSアカウントとIaaSの段階的移行―" },
+    { "date": "2021-09", "event": ".NETラボ 勉強会", "title": "Blazor WebAssembly × Windows Forms" },
+    { "date": "2020-08", "event": "第1回 Azure Cosmos DB 勉強会", "title": "Cosmos DB の使用感(LT)" },
+    { "date": "2018-11", "event": "Node-RED UG 勉強会", "title": "自作ノードの紹介(LT)" },
+    { "date": "2017-10", "event": "Mackerel Day", "title": "アプリケーションエンジニアがMackerelで楽しく監視構成している事例" }
+  ],
+  "x_outputs": [
+    { "category": "OSS / 公開パッケージ", "items": [
+      "NuGet: App.Metrics.Reporting.Custom.Mackerel, ShiftJISExtension",
+      "npm: node-red-contrib-mackerel, node-red-contrib-pixela",
+      "GitHub Action: mackerel-deleted-resource-status-change-action"
+    ]},
+    { "category": "個人開発", "items": [
+      "SRC — VB製フリーソフト Simulation RPG Construction の C#/.NET 移植 https://github.com/7474/SRC",
+      "shumilog — 趣味ログサービス。実装の95%以上を生成AIエージェントに任せた実験 https://shumilog.dev/"
+    ]},
+    { "category": "執筆", "items": [
+      "ブログ https://koudenpa.hatenablog.com/ (2016年〜、約340記事)",
+      "アドベントカレンダー寄稿: Mackerel、はてなエンジニア、AWS、Microsoft Azure、Blazor 等、通算20本超"
+    ]}
+  ]
+}

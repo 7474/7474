@@ -4,12 +4,19 @@ on:
   push:
     branches: [main]
     paths:
+      - "resume.json"
       - "職務経歴.md"
-      - "lapras-career.json"
+      - ".github/actions/resume-sync/**"
+      - ".github/workflows/sync-resume.yaml"
+  pull_request:
+    paths:
+      - "resume.json"
+      - "職務経歴.md"
+      - ".github/actions/resume-sync/**"
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "APIを呼ばず抽出結果のみ表示する"
+        description: "サービスAPIを呼ばず、同期予定の内容のみ表示する"
         type: boolean
         default: false
 
@@ -17,7 +24,19 @@ permissions:
   contents: read
 
 jobs:
+  # Pull requests only verify that the generated Markdown matches the master.
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/resume-sync
+        with:
+          mode: check
+
   sync:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -26,7 +45,7 @@ jobs:
       # (手順は .github/actions/resume-sync/README.md を参照)
       - uses: ./.github/actions/resume-sync
         with:
-          resume_path: 職務経歴.md
-          career_data_path: lapras-career.json
+          mode: check,sync
+          services: lapras
           lapras_api_key: ${{ secrets.LAPRAS_API_KEY }}
           dry_run: ${{ inputs.dry_run || 'false' }}
