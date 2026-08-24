@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/resume-sync
         with:
           mode: check
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # 切り出し後は uses: 7474/resume-sync-action@v1 に差し替える
       # (手順は .github/actions/resume-sync/README.md を参照)
       - uses: ./.github/actions/resume-sync
