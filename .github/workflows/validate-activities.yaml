@@ -26,7 +26,7 @@ jobs:
     timeout-minutes: 10
     # 同一リポジトリ由来の PR でのみ生成物を書き戻す(フォークからの PR は読み取り専用)
     permissions:
-      contents: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) && 'write' || 'read' }}
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
