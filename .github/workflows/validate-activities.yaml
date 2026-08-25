@@ -33,17 +33,30 @@ jobs:
           # PR ではマージコミットではなく PR ブランチそのものを取得する(書き戻すため)
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || '' }}
 
+      # The initial migration may not have an activities.json yet; let the
+      # collector create it before running data validation.
+      - name: Check activities.json exists
+        id: check_file
+        run: |
+          if [ -f activities.json ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # 帰属の検証が先。他者の成果物が混ざっていればここで落とし、生成に進ませない。
       - name: Verify attribution
+        if: steps.check_file.outputs.exists == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/activities/verify.mjs --data activities.json
 
       - name: Render activities.md
+        if: steps.check_file.outputs.exists == 'true'
         run: node .github/scripts/activities/render.mjs --data activities.json --out activities.md
 
       - name: Commit regenerated activities.md
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        if: steps.check_file.outputs.exists == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
           if git diff --quiet -- activities.md; then
             echo "activities.md is already up to date"
@@ -57,5 +70,5 @@ jobs:
 
       # push / workflow_dispatch では書き戻さず、乖離を失敗として報告する
       - name: Check activities.md is up to date
-        if: github.event_name != 'pull_request'
+        if: steps.check_file.outputs.exists == 'true' && github.event_name != 'pull_request'
         run: node .github/scripts/activities/render.mjs --data activities.json --out activities.md --check
