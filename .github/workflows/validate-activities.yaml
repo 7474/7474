@@ -28,7 +28,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # PR ではマージコミットではなく PR ブランチそのものを取得する(書き戻すため)
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || '' }}
