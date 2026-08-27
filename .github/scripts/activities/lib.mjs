@@ -91,6 +91,10 @@ function validateItem(item, index, errors) {
     errors.push(`${at}.upstream is required when attribution is "derived" (name whose work it is)`);
   }
 
+  if (item.featured !== undefined && typeof item.featured !== "boolean") {
+    errors.push(`${at}.featured must be a boolean when present`);
+  }
+
   const evidence = item.evidence || [];
   if (evidence.length === 0) {
     errors.push(`${at}.evidence must not be empty`);
@@ -164,15 +168,29 @@ const GENERATED_NOTICE =
 
 const SECTIONS = [
   { category: "project", title: "🎯 プロジェクト" },
-  { category: "article", title: "📝 技術発信" },
-  { category: "talk", title: "🎤 登壇" },
   { category: "package", title: "📦 公開パッケージ" },
+  { category: "talk", title: "🎤 登壇" },
   { category: "community", title: "🌐 コミュニティ" },
+  { category: "article", title: "📝 技術発信" },
   { category: "milestone", title: "📅 マイルストーン" },
 ];
 
+/**
+ * 根拠は帰属を担保するために必須だが、読み物としては邪魔になりうる。
+ * 本文からリンクできる種別(記事・スライド)は見出しのリンクで用が足りるので、
+ * 根拠行には出さない。GitHub 由来のものは「何を根拠にしたか」が読者にも
+ * 意味を持つので明示する。
+ */
+const INLINE_LINK_KINDS = new Set(["blog", "slide"]);
+
+function primaryLink(item) {
+  const inline = item.evidence.find((e) => INLINE_LINK_KINDS.has(e.kind));
+  return inline?.url ?? null;
+}
+
 function evidenceLinks(item) {
-  return item.evidence.map((e) => `[${e.kind}](${e.url})`).join(" / ");
+  const shown = item.evidence.filter((e) => !INLINE_LINK_KINDS.has(e.kind));
+  return shown.map((e) => `[${e.kind}](${e.url})`).join(" / ");
 }
 
 /** Attribution is rendered, never implied — that is what keeps the page honest. */
@@ -183,32 +201,80 @@ function attributionNote(item) {
   return ` _(${spec.label}${upstream})_`;
 }
 
+function titleWithLink(item) {
+  const link = primaryLink(item);
+  return link ? `[${item.title}](${link})` : item.title;
+}
+
 function renderItem(item) {
-  const tech = item.tech?.length ? `\n  - 技術: ${item.tech.join(", ")}` : "";
-  return [
-    `- **${item.title}**（${item.date}）${attributionNote(item)}`,
-    `  - ${item.summary}`,
-    `  - 根拠: ${evidenceLinks(item)}${tech}`,
-  ].join("\n");
+  const lines = [`- **${titleWithLink(item)}**（${item.date}）${attributionNote(item)}`];
+  if (item.summary) lines.push(`  - ${item.summary}`);
+  const evidence = evidenceLinks(item);
+  if (evidence) lines.push(`  - 根拠: ${evidence}`);
+  if (item.tech?.length) lines.push(`  - 技術: ${item.tech.join(", ")}`);
+  return lines.join("\n");
+}
+
+/** ハイライトは読み手が最初に見る場所なので、要約を本文として見せる。 */
+function renderHighlight(item) {
+  // 根拠は下のカテゴリ一覧に同じ項目が出るので、ここでは繰り返さない。
+  return [`### ${titleWithLink(item)}${attributionNote(item)}`, "", item.summary].join("\n");
+}
+
+/**
+ * 技術スキルは項目から集計する。何回出てきたかではなく
+ * 「どの活動で使ったか」が根拠になるので、代表する活動名を添える。
+ */
+function skillTable(items) {
+  const byTech = new Map();
+  for (const item of items) {
+    for (const tech of item.tech || []) {
+      if (!byTech.has(tech)) byTech.set(tech, []);
+      byTech.get(tech).push(item);
+    }
+  }
+  const rows = [...byTech.entries()]
+    .filter(([, used]) => used.length >= 2) // 1回だけの技術は羅列になるので出さない
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .map(([tech, used]) => {
+      const examples = used
+        .slice(0, 3)
+        .map((i) => i.title.split(" — ")[0])
+        .join(" / ");
+      return `| ${tech} | ${used.length}件 | ${examples} |`;
+    });
+  if (rows.length === 0) return "";
+  return ["| 技術 | 活動数 | 主な活動 |", "|----|----|----|", ...rows].join("\n");
 }
 
 export function renderActivities(data) {
   const items = [...data.items].sort((a, b) => b.date.localeCompare(a.date));
   const blocks = [GENERATED_NOTICE, "", "# プロジェクト & 活動ハイライト", ""];
 
-  if (data.meta?.generatedAt) {
-    blocks.push(`> 最終更新: ${data.meta.generatedAt}`, "");
+  if (data.meta?.generatedAt) blocks.push(`> 最終更新: ${data.meta.generatedAt}`, "");
+
+  // 役割の注記は、実際に author 以外がある場合にだけ意味を持つ。
+  if (items.some((i) => ATTRIBUTIONS[i.attribution].label)) {
+    blocks.push(
+      "> 他者の成果物を取り込んだものは「派生・導入」、レビューや技術判断で関わったものは「役割」として明示しています。",
+      "",
+    );
   }
-  blocks.push(
-    "> すべての項目は検証済みの根拠リンクを伴います。他者の成果物を取り込んだものは「派生・導入」、",
-    "> レビューや技術判断で関わったものは「役割」として明示しています。",
-    "",
-  );
+
+  const featured = items.filter((i) => i.featured);
+  if (featured.length > 0) {
+    blocks.push("## 🔥 最近の注目活動", "", ...featured.map(renderHighlight).flatMap((b) => [b, ""]));
+  }
 
   for (const section of SECTIONS) {
     const inSection = items.filter((i) => i.category === section.category);
     if (inSection.length === 0) continue;
     blocks.push(`## ${section.title}`, "", ...inSection.map(renderItem), "");
+  }
+
+  const skills = skillTable(items);
+  if (skills) {
+    blocks.push("## 🛠 技術スキル(活動からの集計)", "", skills, "");
   }
   return `${blocks.join("\n").trimEnd()}\n`;
 }
