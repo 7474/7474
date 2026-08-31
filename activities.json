@@ -1,8 +1,56 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27"
+    "generatedAt": "2026-08-31"
   },
   "items": [
+    {
+      "id": "article-mynumber-antiscalping-research",
+      "title": "転売ボットにマイナンバーをぶつけたい、と調べたら生半可ではなかった",
+      "date": "2026-08",
+      "category": "article",
+      "attribution": "author",
+      "summary": "マイナンバーカードの公的個人認証(JPKI)を使った転売対策スキームの技術的な実現可能性と、実装を阻む制度的な障壁(検証者オンボーディングコスト等)を調査・整理した記事。本文は生成AIの出力をベースにしている旨を明記。",
+      "tech": [
+        "OIDC",
+        "OAuth 2.0",
+        "JPKI"
+      ],
+      "evidence": [
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/08/25/022201"
+        }
+      ]
+    },
+    {
+      "id": "resume-sync-lapras-action",
+      "title": "職務経歴書をLAPRASへCI同期するcomposite actionを実装",
+      "date": "2026-08",
+      "category": "project",
+      "attribution": "author",
+      "summary": "公式のLAPRAS同期Actionが提供終了したため、LAPRAS公開APIを直接呼ぶ自作composite actionとワークフローを実装し、resume.json(JSON Resume準拠)を単一ソースとしてマスタデータ中心の構成に再設計した。",
+      "featured": true,
+      "tech": [
+        "GitHub Actions",
+        "Node.js",
+        "JSON Resume",
+        "LAPRAS API"
+      ],
+      "evidence": [
+        {
+          "kind": "pull-request",
+          "url": "https://github.com/7474/7474/pull/44"
+        },
+        {
+          "kind": "pull-request",
+          "url": "https://github.com/7474/7474/pull/45"
+        },
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/08/24/140003"
+        }
+      ]
+    },
     {
       "id": "src-sharp-simulation-rpg-construction",
       "title": "SRC# — Simulation RPG Construction の C# .NET 移植",
@@ -10,10 +58,24 @@
       "category": "project",
       "attribution": "author",
       "summary": "2000年代の VB 製シミュレーション RPG エンジン「SRC」を C#/.NET へ移植する長期プロジェクト。v0.1〜v0.5 まで継続的にリリースし、コアライブラリ・Windows Forms・Blazor WebAssembly など複数コンポーネントを実装した。",
-      "tech": ["C#", ".NET 8", ".NET Standard 2.1", "Windows Forms", "Blazor WebAssembly", "Docker", "GitHub Actions"],
+      "tech": [
+        "C#",
+        ".NET 8",
+        ".NET Standard 2.1",
+        "Windows Forms",
+        "Blazor WebAssembly",
+        "Docker",
+        "GitHub Actions"
+      ],
       "evidence": [
-        { "kind": "repository", "url": "https://github.com/7474/SRC" },
-        { "kind": "release", "url": "https://github.com/7474/SRC/releases/tag/v0.5.0" }
+        {
+          "kind": "repository",
+          "url": "https://github.com/7474/SRC"
+        },
+        {
+          "kind": "release",
+          "url": "https://github.com/7474/SRC/releases/tag/v0.5.0"
+        }
       ]
     },
     {
@@ -23,10 +85,17 @@
       "category": "project",
       "attribution": "author",
       "summary": "自作の gh-aw-compile-action を SRC# に適用し、GitHub Agentic Workflows の `.lock.yml` 自動生成を CI に組み込んだ。",
-      "tech": ["GitHub Actions", "GitHub Agentic Workflows"],
+      "tech": [
+        "GitHub Actions",
+        "GitHub Agentic Workflows"
+      ],
       "evidence": [
-        { "kind": "pull-request", "url": "https://github.com/7474/SRC/pull/1032" }
-      ]
+        {
+          "kind": "pull-request",
+          "url": "https://github.com/7474/SRC/pull/1032"
+        }
+      ],
+      "featured": true
     },
     {
       "id": "gh-aw-compile-action",
@@ -35,11 +104,22 @@
       "category": "package",
       "attribution": "author",
       "summary": "`.md` の変更を検知して `gh aw compile` を実行する GitHub Action を自作し、GitHub Marketplace に公開した。",
-      "tech": ["GitHub Actions", "gh CLI", "GitHub Agentic Workflows"],
+      "tech": [
+        "GitHub Actions",
+        "gh CLI",
+        "GitHub Agentic Workflows"
+      ],
       "evidence": [
-        { "kind": "repository", "url": "https://github.com/7474/gh-aw-compile-action" },
-        { "kind": "release", "url": "https://github.com/7474/gh-aw-compile-action/releases/tag/v1" }
-      ]
+        {
+          "kind": "repository",
+          "url": "https://github.com/7474/gh-aw-compile-action"
+        },
+        {
+          "kind": "release",
+          "url": "https://github.com/7474/gh-aw-compile-action/releases/tag/v1"
+        }
+      ],
+      "featured": true
     },
     {
       "id": "nantonbai",
@@ -48,10 +128,24 @@
       "category": "project",
       "attribution": "author",
       "summary": "オフィスソフトで雑に作られたようなグラフ画像をAzure Functions上でAPIとして生成するサービス。OpenXML/SVG/PNGの変換パイプラインを自前実装し、商用ライブラリの透かし問題を自力レンダリングで解決した。",
-      "tech": ["C#", ".NET", "Azure Functions", "Open XML SDK", "Svg.Skia", "SkiaSharp", "CloudFront"],
+      "tech": [
+        "C#",
+        ".NET",
+        "Azure Functions",
+        "Open XML SDK",
+        "Svg.Skia",
+        "SkiaSharp",
+        "CloudFront"
+      ],
       "evidence": [
-        { "kind": "repository", "url": "https://github.com/7474/NantoNBai" },
-        { "kind": "pull-request", "url": "https://github.com/7474/NantoNBai/pull/175" }
+        {
+          "kind": "repository",
+          "url": "https://github.com/7474/NantoNBai"
+        },
+        {
+          "kind": "pull-request",
+          "url": "https://github.com/7474/NantoNBai/pull/175"
+        }
       ]
     },
     {
@@ -61,11 +155,27 @@
       "category": "project",
       "attribution": "author",
       "summary": "phpMyAdmin を AWS Lambda Web Adapter + CloudFront 上で動かす構成テンプレート。読み取り専用ファイルシステムやステートレスセッションなど Lambda 特有の制約に対応した。",
-      "tech": ["PHP", "Apache", "AWS Lambda", "Amazon CloudFront", "Amazon ECR", "Docker", "Terraform", "GitHub Actions"],
+      "tech": [
+        "PHP",
+        "Apache",
+        "AWS Lambda",
+        "Amazon CloudFront",
+        "Amazon ECR",
+        "Docker",
+        "Terraform",
+        "GitHub Actions"
+      ],
       "evidence": [
-        { "kind": "repository", "url": "https://github.com/7474/php-my-admin-lambda-web-adapter" },
-        { "kind": "pull-request", "url": "https://github.com/7474/php-my-admin-lambda-web-adapter/pull/50" }
-      ]
+        {
+          "kind": "repository",
+          "url": "https://github.com/7474/php-my-admin-lambda-web-adapter"
+        },
+        {
+          "kind": "pull-request",
+          "url": "https://github.com/7474/php-my-admin-lambda-web-adapter/pull/50"
+        }
+      ],
+      "featured": true
     },
     {
       "id": "article-photo-battler-genai",
@@ -74,9 +184,14 @@
       "category": "article",
       "attribution": "author",
       "summary": "PhotoBattler の後継として、作りたいアイデアを生成AIに委ねてあっさり実現した体験を記事化。プロトタイプ製作のコスト感の変化を記録した。",
-      "tech": ["生成AI"],
+      "tech": [
+        "生成AI"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/07/30/223317" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/07/30/223317"
+        }
       ]
     },
     {
@@ -86,9 +201,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "AWS DevOps Agent の使い心地を検証・記録し、他のAI開発エージェントとの比較考察を行った記事。",
-      "tech": ["AWS", "生成AI"],
+      "tech": [
+        "AWS",
+        "生成AI"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/07/24/120000" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/07/24/120000"
+        }
       ]
     },
     {
@@ -98,9 +219,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "外食チェーンの注文管理システム障害をエンジニア視点で分析し、アーキテクチャの脆弱性や可用性設計を考察した記事。",
-      "tech": ["アーキテクチャ", "可用性設計"],
+      "tech": [
+        "アーキテクチャ",
+        "可用性設計"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/05/06/153121" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/05/06/153121"
+        }
       ]
     },
     {
@@ -110,9 +237,16 @@
       "category": "article",
       "attribution": "author",
       "summary": "個人サイトの基盤を Azure から AWS CloudFront へ移行した経緯と技術的判断を記録した記事。",
-      "tech": ["AWS", "Amazon CloudFront", "Azure"],
+      "tech": [
+        "AWS",
+        "Amazon CloudFront",
+        "Azure"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/04/10/094719" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/04/10/094719"
+        }
       ]
     },
     {
@@ -122,9 +256,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "phpMyAdmin を AWS Lambda 関数URLで動かす構成を検証した記事。php-my-admin-lambda-web-adapter の実装過程を記録している。",
-      "tech": ["PHP", "AWS Lambda"],
+      "tech": [
+        "PHP",
+        "AWS Lambda"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/04/06/105622" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/04/06/105622"
+        }
       ]
     },
     {
@@ -134,9 +274,16 @@
       "category": "article",
       "attribution": "author",
       "summary": "Amazon Aurora for MySQL のインスタンスクラスを r6g から r8g に変更した際のパフォーマンス変化を実測した記事。",
-      "tech": ["AWS", "Amazon Aurora", "MySQL"],
+      "tech": [
+        "AWS",
+        "Amazon Aurora",
+        "MySQL"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/04/04/202642" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/04/04/202642"
+        }
       ]
     },
     {
@@ -146,9 +293,17 @@
       "category": "article",
       "attribution": "author",
       "summary": "VPS 上の LAMP 構成 Laravel 5 アプリケーションを、サーバーレスな Laravel 12 構成へ移行した経緯を記録した記事。",
-      "tech": ["PHP", "Laravel", "AWS Lambda", "Serverless"],
+      "tech": [
+        "PHP",
+        "Laravel",
+        "AWS Lambda",
+        "Serverless"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/03/24/015051" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/03/24/015051"
+        }
       ]
     },
     {
@@ -158,9 +313,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "Amazon RDS の Blue/Green デプロイ機能の性能を実際に検証した記事。",
-      "tech": ["AWS", "Amazon RDS"],
+      "tech": [
+        "AWS",
+        "Amazon RDS"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/01/28/235749" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2026/01/28/235749"
+        }
       ]
     },
     {
@@ -170,9 +331,18 @@
       "category": "article",
       "attribution": "author",
       "summary": "Laravel Lighthouse で構築した GraphQL API を OpenTelemetry でトレースする方法を検証した記事。",
-      "tech": ["PHP", "Laravel", "Lighthouse", "GraphQL", "OpenTelemetry"],
+      "tech": [
+        "PHP",
+        "Laravel",
+        "Lighthouse",
+        "GraphQL",
+        "OpenTelemetry"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/03/23/203242" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2025/03/23/203242"
+        }
       ]
     },
     {
@@ -182,9 +352,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "本番運用における PHP OPcache の有効化の重要性と設定のポイントをまとめた記事。",
-      "tech": ["PHP", "OPcache"],
+      "tech": [
+        "PHP",
+        "OPcache"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/02/23/225354" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2025/02/23/225354"
+        }
       ]
     },
     {
@@ -194,9 +370,15 @@
       "category": "article",
       "attribution": "author",
       "summary": "Amazon CloudWatch のメトリクスを使いこなすための実践的な観点をまとめた記事。",
-      "tech": ["AWS", "Amazon CloudWatch"],
+      "tech": [
+        "AWS",
+        "Amazon CloudWatch"
+      ],
       "evidence": [
-        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/01/02/000000" }
+        {
+          "kind": "blog",
+          "url": "https://koudenpa.hatenablog.com/entry/2025/01/02/000000"
+        }
       ]
     }
   ]
