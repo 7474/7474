@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27"
+    "generatedAt": "2026-09-07"
   },
   "items": [
     {
@@ -22,6 +22,7 @@
       "date": "2026-06",
       "category": "project",
       "attribution": "author",
+      "featured": true,
       "summary": "自作の gh-aw-compile-action を SRC# に適用し、GitHub Agentic Workflows の `.lock.yml` 自動生成を CI に組み込んだ。",
       "tech": ["GitHub Actions", "GitHub Agentic Workflows"],
       "evidence": [
@@ -48,10 +49,66 @@
       "category": "project",
       "attribution": "author",
       "summary": "オフィスソフトで雑に作られたようなグラフ画像をAzure Functions上でAPIとして生成するサービス。OpenXML/SVG/PNGの変換パイプラインを自前実装し、商用ライブラリの透かし問題を自力レンダリングで解決した。",
+      "featured": true,
       "tech": ["C#", ".NET", "Azure Functions", "Open XML SDK", "Svg.Skia", "SkiaSharp", "CloudFront"],
       "evidence": [
         { "kind": "repository", "url": "https://github.com/7474/NantoNBai" },
         { "kind": "pull-request", "url": "https://github.com/7474/NantoNBai/pull/175" }
+      ]
+    },
+    {
+      "id": "ath-baronh-webfont-translator",
+      "title": "Ath — アーヴ語（Baronh）とアース文字のウェブフォント・翻訳ツール",
+      "date": "2026-09",
+      "category": "project",
+      "attribution": "author",
+      "summary": "架空言語「アーヴ語」とその文字「アース」の二次創作として、字母・数字ラスタからウェブフォントを自動生成するパイプラインと、辞書・文法規則で日本語と行き来する翻訳ツール（CLI/ブラウザ）を実装した。文字の字母・数字デザイン自体は原作（森岡浩之/赤井孝美）に由来するため、フォント生成ロジックと翻訳エンジンが自作範囲。",
+      "featured": true,
+      "tech": ["Python", "JavaScript", "GitHub Pages", "GitHub Actions", "webfont"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/Ath" },
+        { "kind": "pull-request", "url": "https://github.com/7474/Ath/pull/64" }
+      ]
+    },
+    {
+      "id": "shumilog",
+      "title": "Shumilog — 趣味コンテンツのログ記録サービス",
+      "date": "2025-10",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "趣味コンテンツの感想を記録するCloudflare Workers + React製サービス。GitHub Copilot coding agentに主要な機能実装を任せ、自身は要件定義・レビュー・OpenAPI仕様や表示調整などの直接コミットを担当した。",
+      "featured": true,
+      "tech": ["TypeScript", "Cloudflare Workers", "Hono", "Cloudflare D1", "Cloudflare R2", "React", "Vite", "Tailwind CSS"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/shumilog" },
+        { "kind": "commit", "url": "https://github.com/7474/shumilog/commit/b5f46ef6ebff0940336ac258d9db3f851e1c2e1a" },
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/10/15/225935" }
+      ]
+    },
+    {
+      "id": "cut-in-killer",
+      "title": "Cut-in Killer — 駅ホームの割り込みマナー違反を排除するカジュアルWebゲーム",
+      "date": "2026-01",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "駅ホームでの割り込みを排除するHTML5 Canvas製のカジュアルゲーム。GitHub Copilot coding agentに物理エンジン（Matter.js）導入や群衆挙動の調整を実装させ、リポジトリオーナーとしてPRのレビュー・マージを行った。",
+      "tech": ["HTML5 Canvas", "JavaScript", "Matter.js", "GitHub Pages"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/cut-in-killer" },
+        { "kind": "commit", "url": "https://github.com/7474/cut-in-killer/commit/b7eb43216d4c5caa2aa7d9055c4ae67a048771c2" }
+      ]
+    },
+    {
+      "id": "text2image",
+      "title": "text2image — MarkdownをSNS投稿用画像に変換するクライアントサイドツール",
+      "date": "2026-01",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "GitHub Flavored Markdownをブラウザ内でレンダリングし、クリップボードコピーや長文の自動分割画像出力に対応したツール。GitHub Copilot coding agentへの実装依頼と、リポジトリオーナーとしてのPRレビュー・マージで構築した。",
+      "tech": ["JavaScript", "html2canvas", "Marked.js", "GitHub Pages"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/text2image" },
+        { "kind": "commit", "url": "https://github.com/7474/text2image/commit/962bb51058aa3619c5959272995de7227869978a" }
       ]
     },
     {
@@ -197,6 +254,42 @@
       "tech": ["AWS", "Amazon CloudWatch"],
       "evidence": [
         { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/01/02/000000" }
+      ]
+    },
+    {
+      "id": "article-baronh-cnaich",
+      "title": "アーヴ語翻訳機（baronh cnaich）",
+      "date": "2026-09",
+      "category": "article",
+      "attribution": "author",
+      "summary": "架空言語アーヴ語の翻訳ツール「Ath」の開発背景と、生成AIを使った辞書・文法規則の構築過程を記録した記事。",
+      "tech": ["Python", "生成AI"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/09/05/204659" }
+      ]
+    },
+    {
+      "id": "article-career-profile-ci",
+      "title": "転職サイトへのプロフィールCI未遂",
+      "date": "2026-08",
+      "category": "article",
+      "attribution": "author",
+      "summary": "社内外の活動から職務経歴を生成AIで生成し、転職サイトへCIする仕組みを試みた記事。生成AIが他人の成果を自分の成果のように書いてしまう問題など、実務で活動を棚卸しする際の落とし穴を記録した。",
+      "tech": ["生成AI", "GitHub Actions"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/08/24/140003" }
+      ]
+    },
+    {
+      "id": "article-github-copilot-coding-agent-webservice",
+      "title": "GitHub Copilot coding agentにWebサービスを作ってもらう",
+      "date": "2025-10",
+      "category": "article",
+      "attribution": "author",
+      "summary": "GitHub Copilot coding agentに人の介入を最小限にしてWebサービス（Shumilog）を作らせた体験記。要件定義から実装までのエージェント活用の実際を記録した。",
+      "tech": ["GitHub Copilot", "生成AI", "Cloudflare Workers"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/10/15/225935" }
       ]
     }
   ]
