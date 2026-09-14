@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27"
+    "generatedAt": "2026-09-14"
   },
   "items": [
     {
@@ -22,6 +22,7 @@
       "date": "2026-06",
       "category": "project",
       "attribution": "author",
+      "featured": true,
       "summary": "自作の gh-aw-compile-action を SRC# に適用し、GitHub Agentic Workflows の `.lock.yml` 自動生成を CI に組み込んだ。",
       "tech": ["GitHub Actions", "GitHub Agentic Workflows"],
       "evidence": [
@@ -34,11 +35,39 @@
       "date": "2026-04",
       "category": "package",
       "attribution": "author",
+      "featured": true,
       "summary": "`.md` の変更を検知して `gh aw compile` を実行する GitHub Action を自作し、GitHub Marketplace に公開した。",
       "tech": ["GitHub Actions", "gh CLI", "GitHub Agentic Workflows"],
       "evidence": [
         { "kind": "repository", "url": "https://github.com/7474/gh-aw-compile-action" },
         { "kind": "release", "url": "https://github.com/7474/gh-aw-compile-action/releases/tag/v1" }
+      ]
+    },
+    {
+      "id": "ath-arv-language-font-and-translator",
+      "title": "Ath — アーヴ語のウェブフォント化と機械翻訳ツール",
+      "date": "2026-09",
+      "category": "project",
+      "attribution": "maintainer",
+      "featured": true,
+      "summary": "「星界の紋章」の架空文字アーヴ語（Ath）を OpenCV/potrace/fontTools のパイプラインでウェブフォント化し、辞書・文法規則と生成AIを組み合わせた翻訳ツールを構築した。実装はクラウドエージェントを主体に、多数のPRで機能追加・設計判断を主導した。",
+      "tech": ["Python", "OpenCV", "potrace", "fontTools", "JavaScript", "GitHub Pages"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/Ath" },
+        { "kind": "pull-request", "url": "https://github.com/7474/Ath/pull/64" }
+      ]
+    },
+    {
+      "id": "resume-portfolio-automation",
+      "title": "7474/7474 — 職務経歴・ポートフォリオの自動同期基盤",
+      "date": "2026-08",
+      "category": "project",
+      "attribution": "author",
+      "featured": true,
+      "summary": "職務経歴書（resume.json）をマスタデータとして管理し、GitHub Actions から LAPRAS など転職サービスへ CI で同期する仕組みを構築した。ポートフォリオ（activities.json）の自動レンダリング基盤の土台にもなっている。",
+      "tech": ["GitHub Actions", "TypeScript", "JSON Schema"],
+      "evidence": [
+        { "kind": "pull-request", "url": "https://github.com/7474/7474/pull/44" }
       ]
     },
     {
@@ -52,6 +81,33 @@
       "evidence": [
         { "kind": "repository", "url": "https://github.com/7474/NantoNBai" },
         { "kind": "pull-request", "url": "https://github.com/7474/NantoNBai/pull/175" }
+      ]
+    },
+    {
+      "id": "shumilog",
+      "title": "Shumilog — 趣味コンテンツの感想記録サービス",
+      "date": "2025-10",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "「趣味のコンテンツ消費の感想を溜めたい」という要望を GitHub Copilot coding agent に実装させたサービス。Cloudflare Workers + Hono + D1 のバックエンドと React 19 フロントエンドで構成。設計判断・レビューは自身が行い、実装の主体はAIエージェント。",
+      "tech": ["Cloudflare Workers", "Hono", "Cloudflare D1", "React", "TypeScript", "Vite"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/shumilog" },
+        { "kind": "pull-request", "url": "https://github.com/7474/shumilog/pull/508" }
+      ]
+    },
+    {
+      "id": "agent-lab-dotnet-workshop",
+      "title": "agent-lab-dotnet — GitHub Copilot agent lab テンプレートの活用",
+      "date": "2026-04",
+      "category": "project",
+      "attribution": "derived",
+      "upstream": "dotnet-presentations/vscode-github-copilot-agent-lab",
+      "summary": "Microsoft の GitHub Copilot agent lab テンプレートから作成したリポジトリ。Blazor 製 Social Bingo ゲームをベースに、UIスタイルやREADME整備など自身のコミットで手を加えた。",
+      "tech": ["Blazor WebAssembly", ".NET 10", "GitHub Copilot"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/agent-lab-dotnet" },
+        { "kind": "commit", "url": "https://github.com/7474/agent-lab-dotnet/commit/f65b99c1daf958b40d22727d2f9db1bb65a564de" }
       ]
     },
     {
@@ -197,6 +253,54 @@
       "tech": ["AWS", "Amazon CloudWatch"],
       "evidence": [
         { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/01/02/000000" }
+      ]
+    },
+    {
+      "id": "article-resume-ci-attempt",
+      "title": "転職サイトへのプロフィールCI未遂",
+      "date": "2026-08",
+      "category": "article",
+      "attribution": "author",
+      "summary": "職務経歴をマスタデータ化し各種転職サイトへ CI 同期しようとした試みと、求職者向けAPIが LAPRAS 以外にほぼ存在しなかった顛末を記録した記事。resume-portfolio-automation の開発背景を説明している。",
+      "tech": ["GitHub Actions", "CI/CD"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/08/24/140003" }
+      ]
+    },
+    {
+      "id": "article-copilot-coding-agent-webservice",
+      "title": "GitHub Copilot coding agentにWebサービスを作ってもらう",
+      "date": "2025-10",
+      "category": "article",
+      "attribution": "author",
+      "summary": "GitHub Copilot coding agent に Shumilog を一から実装させた体験を、非同期開発や得意不得意の観点から記録した記事。",
+      "tech": ["GitHub Copilot", "生成AI"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/10/15/225935" }
+      ]
+    },
+    {
+      "id": "article-spec-driven-development",
+      "title": "生成AI仕様駆動開発所感",
+      "date": "2025-09",
+      "category": "article",
+      "attribution": "author",
+      "summary": "GitHub Spec Kit を用いた仕様駆動開発を複数モデルで試し、趣味開発における速度・レビュー負荷・英語の壁の観点から所感をまとめた記事。",
+      "tech": ["GitHub Spec Kit", "生成AI"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2025/09/29/232730" }
+      ]
+    },
+    {
+      "id": "article-genai-in-web-service-development",
+      "title": "Webサービス開発に生成AIが入り込んできている例",
+      "date": "2026-03",
+      "category": "article",
+      "attribution": "author",
+      "summary": "副業先の中小規模Webサービス開発フローに GitHub Copilot Agent が組み込まれていった現場感を、2025年以前の試みとの温度差とともに記録した記事。",
+      "tech": ["GitHub Copilot", "生成AI"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/03/29/225222" }
       ]
     }
   ]
