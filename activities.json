@@ -111,8 +111,7 @@
           "kind": "pull-request",
           "url": "https://github.com/7474/SRC/pull/1032"
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "id": "gh-aw-compile-action",
