@@ -1,14 +1,66 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27"
+    "generatedAt": "2026-10-26"
   },
   "items": [
+    {
+      "id": "article-src-sharp-browser-vscode",
+      "title": "Visual BasicのプログラムのC#移植版がブラウザで動いていた",
+      "date": "2026-10",
+      "category": "article",
+      "attribution": "author",
+      "featured": true,
+      "summary": "VB6 製フリーソフト SRC の C# 移植を進めるうちにブラウザ上で動作するようになり、VS Code でシナリオをラインデバッグできるようになった経緯を記録した。",
+      "tech": ["C#", ".NET", "Blazor WebAssembly", "VS Code"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/10/26/075958" }
+      ]
+    },
+    {
+      "id": "src-site",
+      "title": "SRC-Site — SRC シナリオの投稿・配布サイト",
+      "date": "2026-10",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "SRC のシナリオを投稿・配布し、ブラウザ版 SRC#Web ですぐ遊べるようにするサイト。実装は主に AI エージェントが担い、運営・方針決定を行っている。",
+      "tech": ["TypeScript", "SRC#Web"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/SRC-Site" }
+      ]
+    },
+    {
+      "id": "barcodebattler2-simulator-web",
+      "title": "BarcodeBattler2-Simulator-Web — バーコードバトラーII の非公式ブラウザシミュレータ",
+      "date": "2026-10",
+      "category": "project",
+      "attribution": "derived",
+      "upstream": "finalfighter/BarcodeBattler2-Simulator",
+      "summary": "ActionScript 版の参照実装（MIT）を元に、バーコードバトラーII のシミュレータをブラウザ向けに TypeScript で作り直したもの。実装は AI エージェントが多くを担った。",
+      "tech": ["TypeScript"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/BarcodeBattler2-Simulator-Web" }
+      ]
+    },
+    {
+      "id": "ath-baronh",
+      "title": "Ath — アーヴ語とアース文字の二次創作（字形デモ・翻訳ツール）",
+      "date": "2026-09",
+      "category": "project",
+      "attribution": "maintainer",
+      "summary": "アーヴ語の辞書・文法規則による日英翻訳ツールと、アース文字のウェブフォントを GitHub Pages で公開。字母・数字の原デザインは他者によるもので、実装は AI エージェントが多くを担った。",
+      "tech": ["Python", "GitHub Pages", "Web Font"],
+      "evidence": [
+        { "kind": "repository", "url": "https://github.com/7474/Ath" },
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/09/05/204659" }
+      ]
+    },
     {
       "id": "src-sharp-simulation-rpg-construction",
       "title": "SRC# — Simulation RPG Construction の C# .NET 移植",
       "date": "2026-02",
       "category": "project",
       "attribution": "author",
+      "featured": true,
       "summary": "2000年代の VB 製シミュレーション RPG エンジン「SRC」を C#/.NET へ移植する長期プロジェクト。v0.1〜v0.5 まで継続的にリリースし、コアライブラリ・Windows Forms・Blazor WebAssembly など複数コンポーネントを実装した。",
       "tech": ["C#", ".NET 8", ".NET Standard 2.1", "Windows Forms", "Blazor WebAssembly", "Docker", "GitHub Actions"],
       "evidence": [
@@ -34,6 +86,7 @@
       "date": "2026-04",
       "category": "package",
       "attribution": "author",
+      "featured": true,
       "summary": "`.md` の変更を検知して `gh aw compile` を実行する GitHub Action を自作し、GitHub Marketplace に公開した。",
       "tech": ["GitHub Actions", "gh CLI", "GitHub Agentic Workflows"],
       "evidence": [
@@ -60,6 +113,7 @@
       "date": "2026-04",
       "category": "project",
       "attribution": "author",
+      "featured": true,
       "summary": "phpMyAdmin を AWS Lambda Web Adapter + CloudFront 上で動かす構成テンプレート。読み取り専用ファイルシステムやステートレスセッションなど Lambda 特有の制約に対応した。",
       "tech": ["PHP", "Apache", "AWS Lambda", "Amazon CloudFront", "Amazon ECR", "Docker", "Terraform", "GitHub Actions"],
       "evidence": [
