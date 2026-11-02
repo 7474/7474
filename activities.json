@@ -12,9 +12,7 @@
       "summary": "SRC# で動作するシナリオを VS Code 上で編集・ラインデバッグできるようにする拡張。移植版がブラウザ上で動く状態と組み合わせて利用できる。",
       "featured": true,
       "tech": [
-        "TypeScript",
-        "VS Code Extension",
-        "Blazor WebAssembly"
+        "VS Code"
       ],
       "evidence": [
         {
@@ -32,7 +30,6 @@
       "summary": "VB6 製フリーソフトを C# に移植していたところ、ブラウザ動作と VS Code でのシナリオのラインデバッグまで実現できた経緯をまとめた記事。",
       "tech": [
         "C#",
-        "Blazor WebAssembly",
         "VS Code"
       ],
       "evidence": [
