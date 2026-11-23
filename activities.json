@@ -1,10 +1,24 @@
 {
   "meta": {
-    "generatedAt": "2026-08-27"
+    "generatedAt": "2026-11-23"
   },
   "items": [
     {
+      "id": "article-src-browser-vscode-debug",
+      "featured": true,
+      "title": "Visual BasicのプログラムのC#移植版がブラウザで動いていた",
+      "date": "2026-10",
+      "category": "article",
+      "attribution": "author",
+      "summary": "VB6製フリーソフトのC#移植がBlazor WebAssemblyでブラウザ動作し、VS Codeでシナリオのラインデバッグまで可能になった経緯をまとめた記事。",
+      "tech": ["C#", "Blazor WebAssembly", "VS Code"],
+      "evidence": [
+        { "kind": "blog", "url": "https://koudenpa.hatenablog.com/entry/2026/10/26/075958" }
+      ]
+    },
+    {
       "id": "src-sharp-simulation-rpg-construction",
+      "featured": true,
       "title": "SRC# — Simulation RPG Construction の C# .NET 移植",
       "date": "2026-02",
       "category": "project",
@@ -30,6 +44,7 @@
     },
     {
       "id": "gh-aw-compile-action",
+      "featured": true,
       "title": "gh-aw-compile-action — GitHub Agentic Workflows のコンパイル自動化 Action",
       "date": "2026-04",
       "category": "package",
@@ -56,6 +71,7 @@
     },
     {
       "id": "php-my-admin-lambda-web-adapter",
+      "featured": true,
       "title": "php-my-admin-lambda-web-adapter — phpMyAdmin を AWS Lambda Web Adapter でサーバーレス化",
       "date": "2026-04",
       "category": "project",
@@ -81,6 +97,7 @@
     },
     {
       "id": "article-aws-devops-agent",
+      "featured": true,
       "title": "AWS DevOps Agent雑感",
       "date": "2026-07",
       "category": "article",
